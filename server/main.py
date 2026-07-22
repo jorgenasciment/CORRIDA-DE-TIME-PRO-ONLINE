@@ -136,22 +136,79 @@ def load_game_state():
     except Exception: pass
     return {'teams': {}, 'scorers': {}, 'updated_at': 0}
 
+def _github_request(url, method='GET', payload=None, timeout=15):
+    headers={
+        'Authorization':f'Bearer {GITHUB_TOKEN}',
+        'Accept':'application/vnd.github+json',
+        'X-GitHub-Api-Version':'2022-11-28',
+        'User-Agent':'Corrida-De-Time-PRO',
+        'Content-Type':'application/json',
+    }
+    data=None if payload is None else json.dumps(payload).encode('utf-8')
+    req=urllib.request.Request(url,data=data,headers=headers,method=method)
+    with urllib.request.urlopen(req,timeout=timeout) as r:
+        raw=r.read()
+        return json.loads(raw.decode('utf-8')) if raw else {}
+
+
+def _initialize_empty_github_repo(snapshot):
+    """Cria o primeiro commit quando o repositório de dados ainda está totalmente vazio."""
+    api=f'https://api.github.com/repos/{GITHUB_REPO}'
+    content=json.dumps(snapshot,ensure_ascii=False,indent=2).encode('utf-8')
+    blob=_github_request(api+'/git/blobs','POST',{
+        'content':base64.b64encode(content).decode('ascii'),
+        'encoding':'base64',
+    })
+    tree=_github_request(api+'/git/trees','POST',{
+        'tree':[{'path':GITHUB_STATE_PATH,'mode':'100644','type':'blob','sha':blob['sha']}]
+    })
+    commit=_github_request(api+'/git/commits','POST',{
+        'message':'Primeiro salvamento do Corrida de Time PRO',
+        'tree':tree['sha'],
+        'parents':[],
+    })
+    _github_request(api+'/git/refs','POST',{
+        'ref':f'refs/heads/{GITHUB_BRANCH}',
+        'sha':commit['sha'],
+    })
+    print('[NUVEM] Repositório de dados inicializado e histórico salvo.')
+
+
 def _save_cloud_snapshot(snapshot):
     url=_github_api_url()
     if not url: return
     with CLOUD_SAVE_LOCK:
         try:
-            headers={'Authorization':f'Bearer {GITHUB_TOKEN}','Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28','User-Agent':'Corrida-De-Time-PRO','Content-Type':'application/json'}
             sha=None
+            repo_empty=False
             try:
-                req=urllib.request.Request(url+'?'+urllib.parse.urlencode({'ref':GITHUB_BRANCH}),headers=headers)
-                with urllib.request.urlopen(req,timeout=12) as r: sha=json.loads(r.read().decode()).get('sha')
+                meta=_github_request(url+'?'+urllib.parse.urlencode({'ref':GITHUB_BRANCH}))
+                sha=meta.get('sha')
             except urllib.error.HTTPError as e:
-                if e.code != 404: raise
-            payload={'message':'Salvamento automático do Corrida de Time PRO','content':base64.b64encode(json.dumps(snapshot,ensure_ascii=False,indent=2).encode()).decode(),'branch':GITHUB_BRANCH}
+                body=''
+                try: body=e.read().decode('utf-8',errors='replace')
+                except Exception: pass
+                if e.code in (404,409,422):
+                    repo_empty=('empty' in body.lower() or 'branch' in body.lower() or e.code==409)
+                else:
+                    raise
+
+            payload={
+                'message':'Salvamento automático do Corrida de Time PRO',
+                'content':base64.b64encode(json.dumps(snapshot,ensure_ascii=False,indent=2).encode()).decode(),
+                'branch':GITHUB_BRANCH,
+            }
             if sha: payload['sha']=sha
-            req=urllib.request.Request(url,data=json.dumps(payload).encode(),headers=headers,method='PUT')
-            with urllib.request.urlopen(req,timeout=15) as r: r.read()
+            try:
+                _github_request(url,'PUT',payload)
+            except urllib.error.HTTPError as e:
+                body=''
+                try: body=e.read().decode('utf-8',errors='replace')
+                except Exception: pass
+                if repo_empty or e.code in (409,422) or 'empty' in body.lower() or 'branch' in body.lower():
+                    _initialize_empty_github_repo(snapshot)
+                    return
+                raise
             print('[NUVEM] Histórico salvo automaticamente.')
         except Exception as e: print('[NUVEM] Falha ao salvar:',repr(e))
 
@@ -495,6 +552,14 @@ class Handler(BaseHTTPRequestHandler):
         if not str(path).startswith(str(ROOT)) or not path.exists() or path.is_dir():
             self.send_response(404); self.end_headers(); self.wfile.write(b'Arquivo nao encontrado'); return
         data = path.read_bytes()
+        if path.name == 'painel.html' and AUTH_PASSWORD:
+            try:
+                html=data.decode('utf-8')
+                logout='''<a href="/logout" title="Sair" style="position:fixed;right:12px;top:12px;z-index:999999;background:#ff365d;color:white;text-decoration:none;padding:9px 13px;border-radius:10px;font:700 13px Arial;box-shadow:0 4px 18px #0008">SAIR</a>'''
+                html=html.replace('</body>',logout+'</body>')
+                data=html.encode('utf-8')
+            except Exception:
+                pass
         ctype = mimetypes.guess_type(str(path))[0] or 'application/octet-stream'
         if path.suffix.lower() in ['.html','.css','.js']:
             ctype += '; charset=utf-8'
