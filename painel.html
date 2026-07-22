@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Corrida Times TikTok</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#1e3c8a,#050713 58%);font-family:Arial;color:white;display:flex;align-items:flex-start;justify-content:center;padding:18px}.box{width:min(1180px,97vw);background:#07101dee;border:2px solid #00d8ff;border-radius:24px;padding:22px;box-shadow:0 0 35px #00d8ff55}h1{margin:0 0 4px;font-size:32px}.sub{opacity:.8;margin-bottom:14px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 16px}.tab{background:#17243b;color:#fff;border:1px solid #ffffff22;border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}.tab.active{background:#00d8ff;color:#00101b}.cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}.card{background:#0008;border:1px solid #ffffff22;border-radius:18px;padding:16px}.panel{display:none}.panel.active{display:block}.row{display:flex;gap:10px;margin:12px 0;align-items:end}.field{display:flex;flex-direction:column;gap:6px;flex:1}label{font-size:12px;opacity:.78;font-weight:900}input,select,button{border:0;border-radius:12px;padding:12px;font-size:16px}input,select{flex:1;background:#111a2b;color:white;border:1px solid #ffffff33;min-width:0}input[type=range]{padding:0;accent-color:#00d8ff}button{background:#ffcc00;font-weight:900;cursor:pointer;color:#111}button.dark{background:#18233a;color:white;border:1px solid #ffffff22}button.blue{background:#00d8ff;color:#00101b}button.danger{background:#ff3355;color:white}button.keep-trophies{background:#16d98b;color:#001b12;box-shadow:0 0 16px #16d98b55}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}.grid button{font-size:13px;padding:9px;background:#18233a;color:white;border:1px solid #ffffff22}.status{margin-top:12px;padding:12px;background:#0008;border-radius:12px;min-height:160px;white-space:pre-wrap;color:#dff;font-family:Consolas,monospace;font-size:12px;overflow:auto}.links{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}.links a{color:#00d8ff;font-weight:900}.pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#33131f;border:1px solid #ff3366;font-size:12px;font-weight:900}.pill.on{background:#0b2d1f;border-color:#00ff99;color:#baffdf}.value{font-weight:900;color:#ffe36b;margin-left:6px}.check{display:flex;gap:8px;align-items:center;background:#101a2a;border:1px solid #ffffff22;border-radius:12px;padding:12px}.check input{width:20px;height:20px;flex:none}.team-table{display:flex;flex-direction:column;gap:8px}.team-item{display:grid;grid-template-columns:52px 56px 1.2fr .55fr .6fr 1.25fr 1.1fr 94px auto;gap:8px;align-items:center;background:#081322;border:1px solid #ffffff22;border-radius:14px;padding:8px}.team-item input{font-size:13px;padding:9px}.logoPrev{width:48px;height:48px;object-fit:contain;background:#0008;border:1px solid #ffffff33;border-radius:10px;padding:3px}.uploadLogo{font-size:12px;padding:9px;background:#00d8ff;color:#00101b}.missingBadge{font-size:11px;color:#ffe36b;font-weight:900}.team-head{opacity:.75;font-weight:900}.mini{font-size:12px;padding:9px}.savebar{position:sticky;bottom:10px;background:#06101eea;border:1px solid #00d8ff55;border-radius:16px;padding:10px;margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}.eyeBtn{font-size:22px;padding:8px 6px;border-radius:12px;background:#10233b;color:#fff;border:1px solid #ffffff33}.eyeBtn.off{background:#28131a;opacity:.55}.team-item.off{opacity:.45;filter:grayscale(1)}.team-actions{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.hint{font-size:12px;opacity:.8;margin:8px 0;color:#dff}.mobile-control-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.mobile-control-grid button{min-height:76px;font-size:15px;line-height:1.25}.board-control-status{min-height:48px!important;font-size:14px!important;color:#dff;margin-top:10px}.mobile-board-control{grid-column:span 2}@media(max-width:950px){.cards{grid-template-columns:1fr}.box{margin:0 0 16px}.mobile-board-control{grid-column:auto}}@media(max-width:560px){body{padding:8px}.box{padding:12px;border-radius:16px}h1{font-size:24px}.mobile-control-grid{grid-template-columns:1fr}.mobile-control-grid button{min-height:68px;font-size:16px}.tabs{gap:6px}.tab{padding:9px 11px;font-size:13px}}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>🏆 Corrida Times TikTok</h1>
+  <div class="sub">Digite o ID da live, conecte e controle tudo pelo mesmo painel.</div>
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('live',this)">📺 Live</button>
+    <button class="tab" onclick="showTab('cronometro',this)">⏱️ Cronômetro</button>
+    <button class="tab" onclick="showTab('champ',this)">🏆 Campeão</button>
+    <button class="tab" onclick="showTab('rank',this)">📊 Ranking</button>
+    <button class="tab" onclick="showTab('interface',this)">🎮 Interface</button>
+    <button class="tab" onclick="showTab('effects',this)">⚡ Efeitos</button>
+    <button class="tab" onclick="showTab('times',this)">🛡️ Times</button>
+    <button class="tab" onclick="showTab('vitorias',this);renderPanelWins()">🏆 Vitórias</button>
+  </div>
+
+  <div id="live" class="panel active">
+    <div class="cards">
+      <div class="card">
+        <h2>📺 TikTok Live</h2>
+        <div id="connection" class="pill">🔴 OFFLINE</div>
+        <div class="row"><input id="user" placeholder="Digite o @ da live"><button id="btnConnect" class="blue" onclick="connect()">Conectar</button><button class="dark" onclick="disconnect()">Parar</button></div>
+        <div class="links"><a href="/overlay?modo=pc" target="_blank">Abrir Overlay</a><a href="/status" target="_blank">Ver Status</a></div>
+        <h2>🎮 Teste manual</h2>
+        <div class="row"><select id="team"></select><input id="amount" type="number" value="25" min="1"><button onclick="add()">Enviar</button></div>
+        <div class="grid" id="quick"></div>
+      </div>
+      <div class="card">
+        <h2>⚙️ Pontuação</h2>
+        <div class="row"><div class="field"><label>META CAMPEÃO</label><input id="meta" type="number" value="300"></div><div class="field"><label>1 DIAMANTE =</label><input id="diamond_multiplier" type="number" value="1"></div></div>
+        <div class="row"><div class="field"><label>COMENTÁRIO NÃO SOMA</label><input id="comment_points" type="number" value="0"></div><div class="field"><label>TESTE RÁPIDO</label><input id="gift_default" type="number" value="25"></div></div>
+        <div class="row"><button onclick="saveConfig()">Salvar</button><button class="keep-trophies" onclick="resetOnlyPoints()">🏁 Zerar somente os pontos</button><button class="danger" onclick="resetEverything()">⚠️ Zerar pontos e troféus</button></div>
+        <div class="status" style="min-height:72px">🏁 Zerar somente os pontos: todos os times voltam ao início, mas os troféus e o ranking de campeões ficam salvos.
+
+⚠️ Zerar pontos e troféus: apaga todo o campeonato.</div>
+        <h2>🧪 Simular TikTok</h2>
+        <div class="row"><input id="testUser" value="Teste TikTok"><input id="testGift" value="Rosa"></div>
+        <div class="row"><button class="blue" onclick="testTikTok()">Simular presente</button></div>
+      </div>
+      <div class="card mobile-board-control" style="border-color:#ffd400;box-shadow:0 0 18px #ffd40055">
+        <h2>📱 Controle da tela da live</h2>
+        <div class="hint">Use estes botões pelo celular para mostrar ou fechar os quadros para a galera, mesmo longe do computador.</div>
+        <div class="mobile-control-grid">
+          <button class="blue" onclick="controlBoard('champions','show')">👁️ MOSTRAR<br>MAIORES CAMPEÕES</button>
+          <button class="dark" onclick="controlBoard('champions','hide')">🙈 FECHAR<br>MAIORES CAMPEÕES</button>
+          <button onclick="controlBoard('scorers','show')">👁️ MOSTRAR<br>ARTILHEIROS</button>
+          <button class="dark" onclick="controlBoard('scorers','hide')">🙈 FECHAR<br>ARTILHEIROS</button>
+        </div>
+        <div id="boardControlStatus" class="status board-control-status">Pronto para controlar a tela da live.</div>
+      </div>
+      <div class="card" style="border-color:#ff4fd8;box-shadow:0 0 18px #ff4fd844">
+        <h2>❤️ Participar por Likes</h2>
+        <label class="check"><input id="like_enabled" type="checkbox"> Ativar pontos por likes</label>
+        <div class="row">
+          <div class="field"><label>QUANTIDADE DE LIKES</label><input id="likes_required" type="number" min="1" value="100"></div>
+          <div class="field"><label>PONTOS QUE O TIME RECEBE</label><input id="like_points" type="number" min="1" value="1"></div>
+        </div>
+        <button class="blue" onclick="saveConfig()">Salvar participação por likes</button>
+        <div class="status" style="min-height:105px">Exemplo: configure 100 likes = 5 pontos.
+
+A pessoa primeiro escolhe um time pelo comentário. Depois, cada 100 likes enviados por ela dão +5 pontos para o time escolhido. A sobra fica guardada até completar a próxima quantidade.</div>
+      </div>
+      <div class="card" style="border-color:#ffd400;box-shadow:0 0 18px #ffd40044"><h2>⏱️ Cronômetro do Campeonato</h2>
+        <label class="check"><input id="tournament_timer_enabled_live" type="checkbox" onchange="syncTimerFromLive();scheduleAutoSave()"> Ligar cronômetro na tela</label>
+        <div class="field"><label>Tempo para encerrar campeonato (minutos)</label><input id="tournament_minutes_live" type="number" min="1" max="999" value="5" oninput="syncTimerFromLive();scheduleAutoSave()"></div>
+        <button class="blue" onclick="syncTimerFromLive();saveConfig()">Aplicar cronômetro agora</button>
+        <div class="status" style="min-height:88px">Ligado: aparece no overlay. Ao acabar, TOP 1 vira campeão, ganha troféu, zera pontos e mantém troféus.
+
+Desligado: cronômetro some. Campeão só sai quando bater a meta e os pontos continuam.</div>
+      </div>
+      <div class="card" style="border-color:#22ff88;box-shadow:0 0 18px #22ff8844">
+        <h2>🖥️📱🌎 Três modos de uso</h2>
+        <div class="status" id="mobileInfo" style="min-height:92px;font-size:14px">Carregando os endereços...</div>
+        <div class="row">
+          <button class="blue" onclick="openGamePC()">🖥️ MODO 1 — Jogo no PC</button>
+          <button onclick="openGameMobilePreview()">📱 MODO 2 — Jogo no celular local</button>
+          <button class="dark" onclick="loadMobileInfo()">🔄 Atualizar links</button>
+        </div>
+        <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;margin-top:14px">
+          <div style="text-align:center;min-width:210px">
+            <strong>📱 CELULAR NA MESMA REDE</strong>
+            <div style="background:white;border-radius:16px;padding:10px;line-height:0;margin:8px auto;width:max-content">
+              <img id="mobileQr" alt="QR Code local do jogo" style="width:180px;height:180px;display:block" src="/mobile-qr?tipo=local">
+            </div>
+            <button class="dark" onclick="copyMobileUrl()">Copiar link local</button>
+          </div>
+          <div style="text-align:center;min-width:210px">
+            <strong>🌎 JOGO ONLINE</strong>
+            <div style="background:white;border-radius:16px;padding:10px;line-height:0;margin:8px auto;width:max-content">
+              <img id="onlineGameQr" alt="QR Code online do jogo" style="width:180px;height:180px;display:block" src="/mobile-qr?tipo=online-jogo">
+            </div>
+            <button onclick="copyOnlineGameUrl()">Copiar jogo online</button>
+          </div>
+          <div style="text-align:center;min-width:210px">
+            <strong>🌎 PAINEL ONLINE</strong>
+            <div style="background:white;border-radius:16px;padding:10px;line-height:0;margin:8px auto;width:max-content">
+              <img id="onlinePanelQr" alt="QR Code online do painel" style="width:180px;height:180px;display:block" src="/mobile-qr?tipo=online-painel">
+            </div>
+            <button onclick="copyOnlinePanelUrl()">Copiar painel online</button>
+          </div>
+        </div>
+        <div class="hint">Modo 1: painel e jogo no PC. Modo 2: painel no PC e jogo no celular na mesma rede. Modo 3: abra “INICIAR MODO ONLINE.bat”; um celular controla o painel e o outro mostra o jogo. O PC deve permanecer ligado.</div>
+      </div>
+      <div class="card"><h2>📡 Log</h2><div class="status" id="status">Aguardando servidor...</div></div>
+    </div>
+  </div>
+
+
+  <div id="cronometro" class="panel">
+    <div class="cards">
+      <div class="card" style="border-color:#ffd400;box-shadow:0 0 18px #ffd40044"><h2>⏱️ Campeonato por Tempo</h2>
+        <label class="check"><input id="tournament_timer_enabled_cron" type="checkbox" onchange="syncTimerFromCron();scheduleAutoSave()"> Ligar cronômetro de campeonato</label>
+        <div class="field"><label>Tempo para encerrar campeonato (minutos)</label><input id="tournament_minutes_cron" type="number" min="1" max="999" value="5" oninput="syncTimerFromCron();scheduleAutoSave()"></div>
+        <div class="field"><label>Mover para esquerda/direita <span class="value" id="v_tournament_timer_x"></span></label><input id="tournament_timer_x" type="range" min="0" max="100" value="50"></div>
+        <div class="field"><label>Mover para cima/baixo <span class="value" id="v_tournament_timer_y"></span></label><input id="tournament_timer_y" type="range" min="0" max="100" value="8"></div>
+        <div class="field"><label>Tamanho do cronômetro <span class="value" id="v_tournament_timer_scale"></span></label><input id="tournament_timer_scale" type="range" min="50" max="200" value="100"></div>
+        <div class="field"><label>Transparência / clareza <span class="value" id="v_tournament_timer_opacity"></span></label><input id="tournament_timer_opacity" type="range" min="5" max="100" value="100"></div>
+        <div class="hint">5% = quase transparente • 100% = totalmente claro</div>
+        <div class="row"><button class="dark" onclick="setTimerPos(50,8)">Topo centro</button><button class="dark" onclick="setTimerPos(50,50)">Centro</button><button class="dark" onclick="setTimerPos(50,82)">Baixo centro</button></div>
+        <button class="blue" onclick="syncTimerFromCron();saveConfig()">Salvar e aparecer no jogo</button>
+      </div>
+      <div class="card"><h2>Como funciona</h2><div class="status">✅ Cronômetro ligado: aparece no overlay. Quando acabar, o TOP 1 vira campeão, ganha +1 troféu, zera os pontos de todos e mantém os troféus.
+
+✅ Cronômetro desligado: ele some da tela. A corrida fica normal: só sai campeão quando bater a META, e os outros times continuam com os pontos.</div></div>
+      <div class="card"><h2>Atalho</h2><div class="status">O cronômetro mostra somente os números (ex.: 05:00), sem fundo, borda ou textos. Use os controles para mover, aumentar, diminuir e ajustar a transparência em tempo real.</div></div>
+    </div>
+  </div>
+
+  <div id="champ" class="panel">
+    <div class="cards">
+      <div class="card"><h2>🏆 Campeão</h2>
+        <div class="field"><label>Tempo do campeão <span class="value" id="v_champion_duration"></span></label><input id="champion_duration" type="range" min="1" max="120" value="8"></div>
+        <div class="field"><label>Tamanho do escudo <span class="value" id="v_champion_size"></span></label><input id="champion_size" type="range" min="80" max="300" value="120"></div>
+        <div class="field"><label>Tamanho do nome <span class="value" id="v_champion_name_size"></span></label><input id="champion_name_size" type="range" min="18" max="80" value="38"></div>
+      </div>
+      <div class="card"><h2>Texto do campeão</h2>
+        <label class="check"><input id="show_goal_text" type="checkbox"> Mostrar palavra GOOOOL</label>
+        <label class="check"><input id="show_champion_name" type="checkbox" checked> Mostrar nome do campeão</label>
+        <button onclick="saveConfig()">Salvar campeão</button>
+      </div>
+      <div class="card"><h2>⏱️ Campeonato por tempo</h2>
+        <label class="check"><input id="tournament_timer_enabled" type="checkbox"> Ligar cronômetro de campeonato</label>
+        <div class="field"><label>Tempo para encerrar campeonato (minutos)</label><input id="tournament_minutes" type="number" min="1" max="999" value="5"></div>
+        <button class="blue" onclick="saveConfig()">Aplicar cronômetro</button>
+        <div class="status">Ligado: quando o tempo acabar, o TOP 1 vira campeão, ganha +1 troféu e TODOS os pontos zeram. Os troféus continuam.
+
+Desligado: o cronômetro some e só sai campeão quando bater a META; nesse modo, os outros times continuam com a pontuação deles.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="rank" class="panel">
+    <div class="cards">
+      <div class="card"><h2>👁️ Liga / Desliga</h2>
+        <label class="check"><input id="show_ranking" type="checkbox" checked> Mostrar ranking no overlay</label>
+        <label class="check"><input id="show_top5" type="checkbox"> Mostrar TOP 5 (desativado mostra TOP 3)</label>
+        <label class="check"><input id="show_ranking_title" type="checkbox" checked> Mostrar título no overlay</label>
+        <div class="status" style="min-height:74px">Ranking e título agora são separados: pode desligar um e deixar o outro ligado.</div>
+      </div>
+      <div class="card"><h2>🏆 Nome do título</h2>
+        <div class="field"><label>Título editável</label><input id="ranking_title_text" type="text" value="🏆 MAIORES CAMPEÕES" placeholder="MAIORES CAMPEÕES"></div>
+        <div class="field"><label>Cor do título</label><input id="ranking_title_color" type="color" value="#ffd400"></div>
+        <div class="row"><button class="dark" onclick="setRankingTitle('🏆 MAIORES CAMPEÕES')">Maiores Campeões</button><button class="dark" onclick="setRankingTitle('👑 CAMPEÕES')">Campeões</button><button class="dark" onclick="setRankingTitle('🏅 HALL DOS CAMPEÕES')">Hall</button></div>
+      </div>
+      <div class="card"><h2>📍 Mover título</h2>
+        <div class="field"><label>Esquerda / direita <span class="value" id="v_ranking_title_x"></span></label><input id="ranking_title_x" type="range" min="0" max="100" value="50"></div>
+        <div class="field"><label>Cima / baixo <span class="value" id="v_ranking_title_y"></span></label><input id="ranking_title_y" type="range" min="0" max="100" value="4"></div>
+        <div class="field"><label>Tamanho do título <span class="value" id="v_ranking_title_scale"></span></label><input id="ranking_title_scale" type="range" min="50" max="220" value="100"></div>
+        <div class="row"><button class="dark" onclick="setRankingTitlePos(50,4)">Topo centro</button><button class="dark" onclick="setRankingTitlePos(50,10)">Abaixo do topo</button><button class="dark" onclick="setRankingTitlePos(50,50)">Centro</button></div>
+      </div>
+      <div class="card"><h2>📊 Título RANKING em cima do jogo</h2>
+        <label class="check"><input id="show_race_rank_title" type="checkbox" checked> Mostrar faixa RANKING acima do jogo</label>
+        <div class="field"><label>Texto da faixa</label><input id="race_rank_title_text" type="text" value="📊 RANKING"></div>
+        <div class="field"><label>Cor da faixa</label><input id="race_rank_title_color" type="color" value="#ffffff"></div>
+        <div class="field"><label>Esquerda / direita <span class="value" id="v_race_rank_title_x"></span></label><input id="race_rank_title_x" type="range" min="0" max="100" value="50"></div>
+        <div class="field"><label>Cima / baixo <span class="value" id="v_race_rank_title_y"></span></label><input id="race_rank_title_y" type="range" min="5" max="35" value="8"></div>
+        <div class="field"><label>Largura <span class="value" id="v_race_rank_title_width"></span></label><input id="race_rank_title_width" type="range" min="40" max="100" value="88"></div>
+        <div class="field"><label>Altura <span class="value" id="v_race_rank_title_height"></span></label><input id="race_rank_title_height" type="range" min="24" max="90" value="38"></div>
+        <div class="field"><label>Tamanho <span class="value" id="v_race_rank_title_scale"></span></label><input id="race_rank_title_scale" type="range" min="60" max="200" value="100"></div>
+        <div class="row"><button class="dark" onclick="setRaceRankTitlePos(50,8)">Posição certa</button><button class="dark" onclick="setRaceRankTitlePos(50,11)">Em cima do jogo</button><button class="dark" onclick="setRaceRankTitlePos(50,16)">Mais baixo</button></div>
+      </div>
+      <div class="card"><h2>📍 Mover ranking completo</h2>
+        <div class="field"><label>Esquerda / direita <span class="value" id="v_ranking_x"></span></label><input id="ranking_x" type="range" min="0" max="100" value="50"></div>
+        <div class="field"><label>Cima / baixo <span class="value" id="v_ranking_y"></span></label><input id="ranking_y" type="range" min="0" max="80" value="0"></div>
+        <div class="field"><label>Largura do ranking <span class="value" id="v_ranking_width"></span></label><input id="ranking_width" type="range" min="60" max="100" value="96"></div>
+        <div class="row"><button class="dark" onclick="setRankingPos(50,0)">Topo</button><button class="dark" onclick="setRankingPos(50,8)">Mais baixo</button><button class="dark" onclick="setRankingPos(50,18)">Meio alto</button></div>
+      </div>
+      <div class="card"><h2>📊 Tamanho dos cards</h2>
+        <div class="field"><label>Tamanho geral <span class="value" id="v_ranking_scale"></span></label><input id="ranking_scale" type="range" min="80" max="160" value="115"></div>
+        <div class="field"><label>Altura do topo <span class="value" id="v_ranking_height"></span></label><input id="ranking_height" type="range" min="55" max="125" value="78"></div>
+        <div class="field"><label>Espaço entre cards <span class="value" id="v_ranking_gap"></span></label><input id="ranking_gap" type="range" min="2" max="18" value="4"></div>
+      </div>
+      <div class="card"><h2>Escudos e números</h2>
+        <div class="field"><label>Escudo do ranking <span class="value" id="v_ranking_logo_size"></span></label><input id="ranking_logo_size" type="range" min="24" max="80" value="42"></div>
+        <div class="field"><label>Pontuação/vitórias <span class="value" id="v_ranking_score_size"></span></label><input id="ranking_score_size" type="range" min="18" max="60" value="30"></div>
+        <div class="status" style="min-height:58px">🏆 As medalhas foram removidas. Agora você pode mover separadamente o escudo, o número de vitórias e o texto VITÓRIAS.</div>
+        <h3 style="margin:12px 0 6px">🛡️ Posição do escudo</h3>
+        <div class="field"><label>Escudo: esquerda / direita <span class="value" id="v_ranking_logo_x"></span></label><input id="ranking_logo_x" type="range" min="-45" max="45" value="0"></div>
+        <div class="field"><label>Escudo: cima / baixo <span class="value" id="v_ranking_logo_y"></span></label><input id="ranking_logo_y" type="range" min="-30" max="30" value="0"></div>
+        <h3 style="margin:12px 0 6px">🔢 Posição do número</h3>
+        <div class="field"><label>Número: esquerda / direita <span class="value" id="v_ranking_score_x"></span></label><input id="ranking_score_x" type="range" min="-45" max="45" value="0"></div>
+        <div class="field"><label>Número: cima / baixo <span class="value" id="v_ranking_score_y"></span></label><input id="ranking_score_y" type="range" min="-30" max="30" value="0"></div>
+        <h3 style="margin:12px 0 6px">✍️ Posição do texto VITÓRIAS</h3>
+        <div class="field"><label>VITÓRIAS: esquerda / direita <span class="value" id="v_ranking_victory_x"></span></label><input id="ranking_victory_x" type="range" min="-45" max="45" value="0"></div>
+        <div class="field"><label>VITÓRIAS: cima / baixo <span class="value" id="v_ranking_victory_y"></span></label><input id="ranking_victory_y" type="range" min="-30" max="30" value="0"></div>
+        <div class="row"><button class="dark" onclick="resetRankingItems()">Centralizar os 3 itens</button></div>
+      </div>
+      <div class="card"><h2>Salvar</h2><button onclick="saveConfig()">Salvar ranking</button><div class="status">Use esses controles para aumentar os campeões do topo sem editar código.</div></div>
+    </div>
+  </div>
+
+  <div id="interface" class="panel">
+    <div class="cards">
+      <div class="card"><h2>🎮 Interface</h2>
+        <label class="check"><input id="show_live_status" type="checkbox"> Mostrar @ da conta no canto</label>
+        <button onclick="saveConfig()">Salvar interface</button>
+      </div>
+      <div class="card"><h2>🏁 Texto da CHEGADA</h2>
+        <label class="check"><input id="show_finish_label" type="checkbox" checked> Mostrar texto na chegada</label>
+        <div class="field"><label>Texto</label><input id="finish_label_text" type="text" value="CHEGADA"></div>
+        <div class="field"><label>Tamanho <span class="value" id="v_finish_label_size"></span></label><input id="finish_label_size" type="range" min="8" max="50" value="15"></div>
+        <div class="field"><label>Mover esquerda / direita <span class="value" id="v_finish_label_x"></span></label><input id="finish_label_x" type="range" min="-120" max="120" value="0"></div>
+        <div class="field"><label>Mover cima / baixo <span class="value" id="v_finish_label_y"></span></label><input id="finish_label_y" type="range" min="0" max="100" value="50"></div>
+        <div class="field"><label>Rotação <span class="value" id="v_finish_label_rotation"></span></label><input id="finish_label_rotation" type="range" min="-180" max="180" value="-90"></div>
+        <div class="row"><div class="field"><label>Cor da letra</label><input id="finish_label_color" type="color" value="#ffffff"></div><div class="field"><label>Cor do brilho</label><input id="finish_label_glow_color" type="color" value="#00e6ff"></div></div>
+        <div class="field"><label>Força do brilho <span class="value" id="v_finish_label_glow"></span></label><input id="finish_label_glow" type="range" min="0" max="30" value="13"></div>
+        <div class="row"><button class="dark" onclick="setFinishLabel(0,50,-90,15)">Padrão vertical</button><button class="dark" onclick="setFinishLabel(-35,50,-90,20)">Maior à esquerda</button><button class="dark" onclick="setFinishLabel(0,10,0,18)">Deitado no topo</button></div>
+        <button onclick="saveConfig()">Salvar chegada</button>
+      </div>
+      <div class="card"><h2>Limpeza da tela</h2><div class="status">Seu nome do TikTok fica oculto por padrão para ganhar tela. Você pode ligar novamente aqui.</div></div>
+      <div class="card"><h2>Overlay</h2><a href="/overlay?modo=pc" target="_blank" style="color:#00d8ff;font-weight:900">Abrir jogo no PC</a></div>
+    </div>
+  </div>
+
+  <div id="effects" class="panel">
+    <div class="cards">
+      <div class="card"><h2>⚡ Efeitos</h2>
+        <div class="field"><label>Tempo do raio <span class="value" id="v_effect_time"></span></label><input id="effect_time" type="range" min="1" max="30" value="10"></div>
+        <div class="field"><label>Força do raio <span class="value" id="v_lightning_power"></span></label><input id="lightning_power" type="range" min="40" max="180" value="100"></div>
+      </div>
+      <div class="card" style="border-color:#ffcc00;box-shadow:0 0 20px #ffcc0044"><h2>🔥 MODO ULTRA GIFT</h2>
+        <label class="check"><input id="ultra_gift_enabled" type="checkbox" checked> Ligar MODO ULTRA GIFT</label>
+        <div class="field"><label>Ativar a partir de quantos diamantes/pontos <span class="value" id="v_ultra_gift_threshold"></span></label><input id="ultra_gift_threshold" type="range" min="10" max="500" value="99"></div>
+        <div class="field"><label>Tempo do efeito <span class="value" id="v_ultra_gift_duration"></span></label><input id="ultra_gift_duration" type="range" min="1" max="8" value="3"></div>
+        <div class="field"><label>Texto que aparece na tela</label><input id="ultra_gift_text" type="text" value="🔥 MODO ULTRA GIFT 🔥"></div>
+        <label class="check"><input id="ultra_gift_cinematic" type="checkbox" checked> Cinemático 99+ / carregamento antes da explosão</label>
+        <label class="check"><input id="ultra_gift_slowmo" type="checkbox" checked> Câmera lenta rápida</label>
+        <label class="check"><input id="ultra_gift_dim" type="checkbox" checked> Escurecer fundo no impacto</label>
+        <label class="check"><input id="ultra_gift_shockwave" type="checkbox" checked> Onda de choque</label>
+        <label class="check"><input id="ultra_gift_particles" type="checkbox" checked> Partículas douradas</label>
+        <label class="check"><input id="ultra_gift_rays" type="checkbox" checked> Raios girando</label>
+        <div class="row"><button class="blue" onclick="document.getElementById('amount').value=document.getElementById('ultra_gift_threshold').value;testTikTok()">Testar Ultra Gift</button><button onclick="saveConfig()">Salvar Ultra Gift</button></div>
+      </div>
+      <div class="card"><h2>Obs.</h2><div class="status">Quando alguém mandar presente alto, exemplo 99 diamantes, aparece: escudo gigante, explosão, raios, partículas, tremor de câmera e texto especial. Pode ligar/desligar tudo aqui.</div></div>
+    </div>
+  </div>
+
+  <div id="times" class="panel">
+    <div class="cards" style="grid-template-columns:1fr;">
+      <div class="card">
+        <h2>🛡️ Gerenciar times sem mexer em código</h2>
+        <div class="status" style="min-height:auto">Aqui você pode adicionar, remover e alterar times. Agora todos os 40 times Série A + Série B vêm com escudo visual completo, sem ficar só na sigla. Exemplo de palavras: flamengo, fla, mengao.</div>
+        <div class="row">
+          <button class="blue" onclick="addTeamRow()">➕ Adicionar time</button>
+          <button class="blue" onclick="resetSerieAB()">🛡️ Carregar Série A + B com escudos</button>
+          <button onclick="saveTeams()">💾 Salvar times</button>
+          <button class="dark" onclick="loadConfigOnly()">↻ Recarregar</button>
+        </div>
+        <div class="team-item team-head"><div>Rodada</div><div>Nome</div><div>Sigla</div><div>Cor</div><div>Logo</div><div>Palavras/comentários</div><div>Ação</div></div>
+        <div class="hint">👁️ Olho aberto = time joga na rodada. 🙈 Olho fechado = time fica salvo no painel, mas não aparece no jogo.<br>📁 Trocar escudo = escolha a imagem oficial no seu computador. Ela é copiada para assets/logos e salva no time.</div><div class="team-actions"><button class="blue" onclick="setAllTeamsActive(true)">👁️ Ativar todos</button><button class="dark" onclick="setAllTeamsActive(false)">🙈 Desativar todos</button></div><div id="teamEditor" class="team-table"></div>
+        <div class="savebar"><button onclick="saveTeams()">💾 Salvar lista de times</button><span id="teamSaveMsg">Depois de salvar, overlay e painel atualizam na hora.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="vitorias" class="panel">
+    <div class="card" style="max-width:900px;margin:auto;border-color:#ffd400">
+      <h2>🏆 Times que já venceram</h2>
+      <div class="hint">Mostra somente os times que possuem pelo menos 1 vitória, usando o escudo no lugar do nome. Use os botões abaixo ou a tecla <b>V</b> neste painel para abrir/fechar na live.</div>
+      <div class="row"><button class="blue" onclick="renderPanelWins()">🔄 Atualizar vitórias</button><button onclick="controlBoard('champions','show')">👁️ Mostrar Maiores Campeões</button><button class="dark" onclick="controlBoard('champions','hide')">🙈 Ocultar Maiores Campeões</button><button onclick="openOverlayAndWins()">📺 Abrir jogo</button></div>
+      <div class="card" style="margin-top:16px;border-color:#35d8ff;background:#071726">
+        <h2>⚽ Artilheiros dos campeões</h2>
+        <div class="hint">No celular não precisa usar a tecla A. Estes botões mostram ou ocultam o quadro de artilheiros diretamente na tela da live.</div>
+        <div class="row"><button onclick="controlBoard('scorers','show')">👁️ Mostrar Artilheiros</button><button class="dark" onclick="controlBoard('scorers','hide')">🙈 Ocultar Artilheiros</button><button class="blue" onclick="controlBoard('scorers','toggle')">🔄 Abrir / Fechar</button></div>
+      </div>
+      <div class="cards" style="grid-template-columns:1fr 1fr 1fr;margin:12px 0">
+        <div class="field"><label>Tamanho do quadro <span class="value" id="winsSizeValue">75%</span></label><input id="winsBoardSize" type="range" min="45" max="140" value="75" oninput="updateWinsBoardSettings()"></div>
+        <div class="field"><label>Esquerda / direita <span class="value" id="winsXValue">50%</span></label><input id="winsBoardX" type="range" min="5" max="95" value="50" oninput="updateWinsBoardSettings()"></div>
+        <div class="field"><label>Cima / baixo <span class="value" id="winsYValue">50%</span></label><input id="winsBoardY" type="range" min="5" max="95" value="50" oninput="updateWinsBoardSettings()"></div>
+      </div>
+      <div class="row"><button class="dark" onclick="changeWinsSize(-5)">➖ Diminuir</button><button class="blue" onclick="changeWinsSize(5)">➕ Aumentar</button><button onclick="resetWinsBoardSettings()">↻ Centralizar</button></div>
+      <div class="hint">Na live, também pode arrastar o quadro pelo título para mover. A posição e o tamanho ficam salvos.</div>
+      <div id="panelWinsList" class="status" style="min-height:300px;font-size:15px;line-height:1.8"></div>
+    </div>
+  </div>
+
+</div>
+<script>
+let teams=[];
+const MISSING_LOGO_ABBRS = ["ACG", "AME", "ATH", "AVA", "BSP", "CHA", "CRB", "CRI", "CTB", "GOI", "JUV", "LON", "NAU", "NOV", "OPE", "PON", "SBE", "VNO"];
+const TEAM_LOGO_LIBRARY = [{"name": "Athletico-PR", "abbr": "CAP", "color": "#d71920", "logo": "assets/logos/CAP.png", "keywords": ["Athletico-PR", "CAP", "athletico pr", "athletico", "athletico paranaense", "cap", "furacao", "furacão"]}, {"name": "Atlético-MG", "abbr": "CAM", "color": "#f1f1f1", "logo": "assets/logos/CAM.png", "keywords": ["Atlético-MG", "CAM", "atletico mg", "atlético mg", "atlético mineiro", "atletico mineiro", "cam", "galo"]}, {"name": "Bahia", "abbr": "BAH", "color": "#008ee6", "logo": "assets/logos/BAH.png", "keywords": ["Bahia", "BAH", "bahia", "bah", "esquadrao", "esquadrão"]}, {"name": "Botafogo", "abbr": "BOT", "color": "#eeeeee", "logo": "assets/logos/BOT.png", "keywords": ["Botafogo", "BOT", "botafogo", "bot", "fogao", "fogão"]}, {"name": "Chapecoense", "abbr": "CHA", "color": "#1fad4b", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Chapecoense", "CHA", "chapecoense", "chape", "cha"]}, {"name": "Corinthians", "abbr": "COR", "color": "#eeeeee", "logo": "assets/logos/COR.png", "keywords": ["Corinthians", "COR", "corinthians", "cor", "timao", "timão"]}, {"name": "Coritiba", "abbr": "CTB", "color": "#159447", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Coritiba", "CTB", "coritiba", "coxa", "ctb"]}, {"name": "Cruzeiro", "abbr": "CRU", "color": "#0057b8", "logo": "assets/logos/CRU.png", "keywords": ["Cruzeiro", "CRU", "cruzeiro", "cru", "raposa"]}, {"name": "Flamengo", "abbr": "FLA", "color": "#e90016", "logo": "assets/logos/FLA.png", "keywords": ["Flamengo", "FLA", "flamengo", "fla", "mengao", "mengão"]}, {"name": "Fluminense", "abbr": "FLU", "color": "#006b3f", "logo": "assets/logos/FLU.png", "keywords": ["Fluminense", "FLU", "fluminense", "flu", "tricolor carioca"]}, {"name": "Grêmio", "abbr": "GRE", "color": "#00a3e0", "logo": "assets/logos/GRE.png", "keywords": ["Grêmio", "GRE", "gremio", "grêmio", "gre"]}, {"name": "Internacional", "abbr": "INT", "color": "#df0000", "logo": "assets/logos/INT.png", "keywords": ["Internacional", "INT", "internacional", "inter", "int", "colorado"]}, {"name": "Mirassol", "abbr": "MIR", "color": "#d4d400", "logo": "assets/logos/MIR.png", "keywords": ["Mirassol", "MIR", "mirassol", "mir"]}, {"name": "Palmeiras", "abbr": "PAL", "color": "#22b14c", "logo": "assets/logos/PAL.png", "keywords": ["Palmeiras", "PAL", "palmeiras", "pal", "porco", "verdao", "verdão"]}, {"name": "RB Bragantino", "abbr": "RBB", "color": "#e40046", "logo": "assets/logos/RBB.png", "keywords": ["RB Bragantino", "RBB", "bragantino", "rb bragantino", "red bull bragantino", "rbb"]}, {"name": "Remo", "abbr": "REM", "color": "#003b75", "logo": "assets/logos/REM.png", "keywords": ["Remo", "REM", "remo", "rem"]}, {"name": "Santos", "abbr": "SAN", "color": "#eeeeee", "logo": "assets/logos/SAN.png", "keywords": ["Santos", "SAN", "santos", "san", "peixe"]}, {"name": "São Paulo", "abbr": "SPFC", "color": "#d71920", "logo": "assets/logos/SPFC.png", "keywords": ["São Paulo", "SPFC", "sao paulo", "são paulo", "spfc", "tricolor paulista"]}, {"name": "Vasco", "abbr": "VAS", "color": "#eeeeee", "logo": "assets/logos/VAS.png", "keywords": ["Vasco", "VAS", "vasco", "vas", "vasco da gama"]}, {"name": "Vitória", "abbr": "VIT", "color": "#c90000", "logo": "assets/logos/VIT.png", "keywords": ["Vitória", "VIT", "vitoria", "vitória", "vit"]}, {"name": "Vila Nova", "abbr": "VNO", "color": "#d71920", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Vila Nova", "VNO", "vila nova", "vila", "vno", "tigrão", "tigrao"]}, {"name": "Fortaleza", "abbr": "FOR", "color": "#0067b1", "logo": "assets/logos/FOR.png", "keywords": ["Fortaleza", "FOR", "fortaleza", "for", "leao", "leão"]}, {"name": "Ceará", "abbr": "CEA", "color": "#eeeeee", "logo": "assets/logos/CEA.png", "keywords": ["Ceará", "CEA", "ceara", "ceará", "cea", "vozao", "vozão"]}, {"name": "Novorizontino", "abbr": "NOV", "color": "#f2c300", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Novorizontino", "NOV", "novorizontino", "gremio novorizontino", "grêmio novorizontino", "nov"]}, {"name": "Avaí", "abbr": "AVA", "color": "#0067b1", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Avaí", "AVA", "avai", "avaí", "ava"]}, {"name": "Athletic Club", "abbr": "ATH", "color": "#111111", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Athletic Club", "ATH", "athletic", "athletic club", "ath"]}, {"name": "Operário-PR", "abbr": "OPE", "color": "#eeeeee", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Operário-PR", "OPE", "operario", "operário", "operario pr", "operário pr", "ope"]}, {"name": "Botafogo-SP", "abbr": "BSP", "color": "#eeeeee", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Botafogo-SP", "BSP", "botafogo sp", "botafogo-sp", "botafogo ribeirao", "botafogo ribeirão", "bsp"]}, {"name": "São Bernardo", "abbr": "SBE", "color": "#f2d000", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["São Bernardo", "SBE", "sao bernardo", "são bernardo", "sbe"]}, {"name": "Criciúma", "abbr": "CRI", "color": "#f5d20a", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Criciúma", "CRI", "criciuma", "criciúma", "cri", "tigre"]}, {"name": "Juventude", "abbr": "JUV", "color": "#149657", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Juventude", "JUV", "juventude", "juv"]}, {"name": "Goiás", "abbr": "GOI", "color": "#0c8c42", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Goiás", "GOI", "goias", "goiás", "goi", "esmeraldino"]}, {"name": "Sport", "abbr": "SPT", "color": "#e00000", "logo": "assets/logos/SPT.png", "keywords": ["Sport", "SPT", "sport", "sport recife", "spt", "leao da ilha", "leão da ilha"]}, {"name": "Náutico", "abbr": "NAU", "color": "#e00000", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Náutico", "NAU", "nautico", "náutico", "nau", "timbu"]}, {"name": "Cuiabá", "abbr": "CUI", "color": "#d9c300", "logo": "assets/logos/CUI.png", "keywords": ["Cuiabá", "CUI", "cuiaba", "cuiabá", "cui", "dourado"]}, {"name": "Londrina", "abbr": "LON", "color": "#00a6df", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Londrina", "LON", "londrina", "lon", "tubarao", "tubarão"]}, {"name": "Atlético-GO", "abbr": "ACG", "color": "#e00000", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Atlético-GO", "ACG", "atletico go", "atlético go", "atletico goianiense", "atlético goianiense", "acg", "dragao", "dragão"]}, {"name": "Ponte Preta", "abbr": "PON", "color": "#eeeeee", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["Ponte Preta", "PON", "ponte preta", "ponte", "pon", "macaca"]}, {"name": "CRB", "abbr": "CRB", "color": "#e00000", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["CRB", "crb", "regatas"]}, {"name": "América-MG", "abbr": "AME", "color": "#159447", "logo": "assets/logos/_FALTA_ESCUDO.png", "keywords": ["América-MG", "AME", "america mg", "américa mg", "america mineiro", "américa mineiro", "ame", "coelho"]}];
+function normTeamName(x){return String(x||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]/g,'');}
+function findTeamPreset(name,abbr){
+  const n=normTeamName(name), a=normTeamName(abbr);
+  return TEAM_LOGO_LIBRARY.find(t=>normTeamName(t.abbr)===a || normTeamName(t.name)===n || (Array.isArray(t.keywords)&&t.keywords.some(k=>normTeamName(k)===n))) || null;
+}
+function applyPresetToRow(row){
+  if(!row) return;
+  const name=row.querySelector('[data-k="name"]'); const abbr=row.querySelector('[data-k="abbr"]'); const color=row.querySelector('[data-k="color"]'); const logo=row.querySelector('[data-k="logo"]'); const keywords=row.querySelector('[data-k="keywords"]');
+  const p=findTeamPreset(name&&name.value, abbr&&abbr.value); if(!p) return;
+  if(abbr && (!abbr.value || abbr.value.length<3)) abbr.value=p.abbr;
+  if(color) color.value=validColor(color.value||p.color);
+  if(logo && (!logo.value || logo.value.includes('/NOV.png'))) logo.value=p.logo;
+  if(keywords && !keywords.value) keywords.value=(p.keywords||[p.name,p.abbr]).join(', ');
+}
+function resetSerieAB(){
+  teams = TEAM_LOGO_LIBRARY.map(t=>({...t, active:true, keywords:Array.isArray(t.keywords)?t.keywords:[t.name,t.abbr]}));
+  renderTeamControls(); userEditing=true; teamEditing=true;
+  document.getElementById('teamSaveMsg').textContent='Lista Série A + Série B carregada. Clique em SALVAR TIMES.';
+}
+
+const sel=document.getElementById('team'), quick=document.getElementById('quick'), statusBox=document.getElementById('status'), conn=document.getElementById('connection'), teamEditor=document.getElementById('teamEditor');
+const API = (location.protocol === 'http:' || location.protocol === 'https:') ? location.origin : 'http://127.0.0.1:8787';
+const configKeys=['meta','comment_points','diamond_multiplier','gift_default','champion_duration','champion_size','champion_name_size','show_goal_text','show_champion_name','tournament_timer_enabled','tournament_minutes','tournament_timer_x','tournament_timer_y','tournament_timer_scale','tournament_timer_opacity','show_live_status','show_finish_label','finish_label_text','finish_label_size','finish_label_x','finish_label_y','finish_label_rotation','finish_label_color','finish_label_glow_color','finish_label_glow','show_ranking','show_top5','ranking_scale','ranking_x','ranking_y','ranking_width','ranking_logo_size','ranking_score_size','ranking_logo_x','ranking_logo_y','ranking_score_x','ranking_score_y','ranking_victory_x','ranking_victory_y','ranking_gap','ranking_height','ranking_title_text','show_ranking_title','ranking_title_x','ranking_title_y','ranking_title_scale','ranking_title_color','show_race_rank_title','race_rank_title_text','race_rank_title_x','race_rank_title_y','race_rank_title_width','race_rank_title_height','race_rank_title_scale','race_rank_title_color','effect_time','lightning_power','ultra_gift_enabled','ultra_gift_threshold','ultra_gift_text','ultra_gift_duration','ultra_gift_cinematic','ultra_gift_slowmo','ultra_gift_dim','ultra_gift_shockwave','ultra_gift_particles','ultra_gift_rays','like_enabled','likes_required','like_points'];
+let userEditing=false;
+let teamEditing=false;
+let autoSaveTimer=null;
+let savingNow=false;
+
+let mobileOverlayUrl='';
+let onlineGameUrl='';
+let onlinePanelUrl='';
+async function copyAddress(value,label){
+  if(!value){ alert('Modo online ainda não está ativo. Abra INICIAR MODO ONLINE.bat no PC.'); return; }
+  try{await navigator.clipboard.writeText(value); alert(label+' copiado!');}
+  catch(e){prompt('Copie este endereço:',value);}
+}
+async function loadMobileInfo(){
+  const box=document.getElementById('mobileInfo');
+  try{
+    const r=await fetch(API+'/network-info',{cache:'no-store'});
+    const j=await r.json();
+    mobileOverlayUrl=j.mobile_overlay_url||j.overlay_url||'';
+    onlineGameUrl=j.online_overlay_url||'';
+    onlinePanelUrl=j.online_panel_url||'';
+    box.textContent='MODO 1 — PC: /overlay?modo=pc\nMODO 2 — CELULAR LOCAL: '+mobileOverlayUrl+'\nMODO 3 — ONLINE: '+(j.online_active?'ATIVO — dois celulares podem acessar de qualquer rede.':'DESLIGADO — abra INICIAR MODO ONLINE.bat no PC.');
+    const stamp=Date.now();
+    const qr=document.getElementById('mobileQr'); if(qr) qr.src=API+'/mobile-qr?tipo=local&t='+stamp;
+    const qg=document.getElementById('onlineGameQr'); if(qg) qg.src=API+'/mobile-qr?tipo=online-jogo&t='+stamp;
+    const qp=document.getElementById('onlinePanelQr'); if(qp) qp.src=API+'/mobile-qr?tipo=online-painel&t='+stamp;
+  }catch(e){
+    box.textContent='Não consegui descobrir os endereços. Reinicie pelo arquivo de início.';
+  }
+}
+async function copyMobileUrl(){ if(!mobileOverlayUrl) await loadMobileInfo(); return copyAddress(mobileOverlayUrl,'Link local'); }
+async function copyOnlineGameUrl(){ if(!onlineGameUrl) await loadMobileInfo(); return copyAddress(onlineGameUrl,'Link do jogo online'); }
+async function copyOnlinePanelUrl(){ if(!onlinePanelUrl) await loadMobileInfo(); return copyAddress(onlinePanelUrl,'Link do painel online'); }
+
+
+function openGamePC(){ window.open('/overlay?modo=pc','_blank'); }
+function openGameMobilePreview(){ window.open('/overlay?modo=celular','_blank'); }
+
+function scheduleAutoSave(){
+  clearTimeout(autoSaveTimer);
+  autoSaveTimer=setTimeout(()=>saveConfig(true), 250);
+}
+function syncTimerFromLive(){
+  const enabled=document.getElementById('tournament_timer_enabled_live');
+  const mins=document.getElementById('tournament_minutes_live');
+  const mainEnabled=document.getElementById('tournament_timer_enabled');
+  const mainMins=document.getElementById('tournament_minutes');
+  const cronEnabled=document.getElementById('tournament_timer_enabled_cron');
+  const cronMins=document.getElementById('tournament_minutes_cron');
+  if(mainEnabled && enabled) mainEnabled.checked=enabled.checked;
+  if(cronEnabled && enabled) cronEnabled.checked=enabled.checked;
+  if(mainMins && mins) mainMins.value=mins.value;
+  if(cronMins && mins) cronMins.value=mins.value;
+}
+function syncTimerFromCron(){
+  const enabled=document.getElementById('tournament_timer_enabled_cron');
+  const mins=document.getElementById('tournament_minutes_cron');
+  const mainEnabled=document.getElementById('tournament_timer_enabled');
+  const mainMins=document.getElementById('tournament_minutes');
+  const liveEnabled=document.getElementById('tournament_timer_enabled_live');
+  const liveMins=document.getElementById('tournament_minutes_live');
+  if(mainEnabled && enabled) mainEnabled.checked=enabled.checked;
+  if(liveEnabled && enabled) liveEnabled.checked=enabled.checked;
+  if(mainMins && mins) mainMins.value=mins.value;
+  if(liveMins && mins) liveMins.value=mins.value;
+}
+function syncTimerMirrorsFromMain(){
+  const mainEnabled=document.getElementById('tournament_timer_enabled');
+  const mainMins=document.getElementById('tournament_minutes');
+  ['_live','_cron'].forEach(suf=>{
+    const e=document.getElementById('tournament_timer_enabled'+suf);
+    const m=document.getElementById('tournament_minutes'+suf);
+    if(e && mainEnabled) e.checked=mainEnabled.checked;
+    if(m && mainMins) m.value=mainMins.value;
+  });
+}
+
+// TEMPO REAL: qualquer controle do painel principal já salva e manda para o overlay.
+document.addEventListener('input', e=>{
+  if(e.target.closest('.panel')) userEditing=true;
+  if(e.target.id && configKeys.includes(e.target.id)){ updateLabels(); scheduleAutoSave(); }
+});
+document.addEventListener('change', e=>{
+  if(e.target.id && configKeys.includes(e.target.id)){ scheduleAutoSave(); }
+});
+function setTimerPos(x,y){const ex=document.getElementById('tournament_timer_x');const ey=document.getElementById('tournament_timer_y');if(ex)ex.value=x;if(ey)ey.value=y;updateLabels();scheduleAutoSave();}
+function setRankingTitle(txt){const e=document.getElementById('ranking_title_text'); if(e)e.value=txt; scheduleAutoSave();}
+function setRankingTitlePos(x,y){const ex=document.getElementById('ranking_title_x'); const ey=document.getElementById('ranking_title_y'); if(ex)ex.value=x; if(ey)ey.value=y; updateLabels(); scheduleAutoSave();}
+function setRaceRankTitlePos(x,y){const ex=document.getElementById('race_rank_title_x'); const ey=document.getElementById('race_rank_title_y'); if(ex)ex.value=x; if(ey)ey.value=y; updateLabels(); scheduleAutoSave();}
+function setRankingPos(x,y){const ex=document.getElementById('ranking_x'); const ey=document.getElementById('ranking_y'); if(ex)ex.value=x; if(ey)ey.value=y; updateLabels(); scheduleAutoSave();}
+function resetRankingItems(){['ranking_logo_x','ranking_logo_y','ranking_score_x','ranking_score_y','ranking_victory_x','ranking_victory_y'].forEach(id=>{const e=document.getElementById(id);if(e)e.value=0;});updateLabels();scheduleAutoSave();}
+function setFinishLabel(x,y,r,size){['finish_label_x','finish_label_y','finish_label_rotation','finish_label_size'].forEach((id,i)=>{const e=document.getElementById(id);if(e)e.value=[x,y,r,size][i]});updateLabels();scheduleAutoSave();}
+function showTab(id,btn){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));btn.classList.add('active')}
+function log(msg){const t=new Date().toLocaleTimeString(); statusBox.textContent = `[${t}] ${msg}\n` + statusBox.textContent.slice(0,3000)}
+function val(id){const el=document.getElementById(id); if(!el) return ''; return el.type==='checkbox' ? el.checked : el.value}
+function updateLabels(){['finish_label_size','finish_label_x','finish_label_y','finish_label_rotation','finish_label_glow','champion_duration','champion_size','champion_name_size','ranking_scale','ranking_x','ranking_y','ranking_width','ranking_logo_size','ranking_score_size','ranking_logo_x','ranking_logo_y','ranking_score_x','ranking_score_y','ranking_victory_x','ranking_victory_y','ranking_gap','ranking_height','ranking_title_text','show_ranking','show_ranking_title','ranking_title_x','ranking_title_y','ranking_title_scale','ranking_title_color','show_race_rank_title','race_rank_title_text','race_rank_title_x','race_rank_title_y','race_rank_title_width','race_rank_title_height','race_rank_title_scale','race_rank_title_color','effect_time','lightning_power','ultra_gift_threshold','ultra_gift_duration','tournament_timer_x','tournament_timer_y','tournament_timer_scale','tournament_timer_opacity','ranking_title_x','ranking_title_y','ranking_title_scale'].forEach(k=>{const e=document.getElementById('v_'+k), i=document.getElementById(k); if(e&&i){let suffix=k.includes('duration')?'s':k==='effect_time'?' /10s':k==='finish_label_rotation'?'°':(k==='finish_label_size'||k==='finish_label_x'||k==='finish_label_glow')?'px':(k==='tournament_timer_x'||k==='tournament_timer_y'||k==='tournament_timer_scale'||k==='tournament_timer_opacity'||k==='ranking_x'||k==='ranking_y'||k==='ranking_width'||k.includes('size')||k.includes('scale')||k.includes('height')||k.includes('gap')?'%':''); e.textContent=i.value+suffix}})}
+function fillConfig(c, force=false){
+  if(!c) return;
+  const active = document.activeElement;
+  const typingNow = active && ['INPUT','TEXTAREA','SELECT'].includes(active.tagName);
+  const editingTeamsNow = teamEditing || (active && active.closest && active.closest('#teamEditor'));
+  if(!userEditing || force || !typingNow){
+    configKeys.forEach(k=>{const el=document.getElementById(k); if(!el || c[k]==null) return; if(el.type==='checkbox') el.checked=!!c[k]; else el.value=c[k];});
+    updateLabels();
+    syncTimerMirrorsFromMain();
+  }
+  // Correção M25: não deixa o servidor sobrescrever os campos enquanto você está editando os times.
+  if(Array.isArray(c.teams) && (force || !editingTeamsNow)){ teams=c.teams.map(t=>({...t, keywords:Array.isArray(t.keywords)?t.keywords:[String(t.keywords||'')]})); renderTeamControls(); }
+}
+function renderSelectors(){
+  sel.innerHTML=''; quick.innerHTML='';
+  teams.filter(t=>t.active!==false).forEach(t=>{sel.innerHTML+=`<option>${t.name}</option>`});
+  teams.filter(t=>t.active!==false).slice(0,16).forEach(t=>{quick.innerHTML+=`<button onclick="quickAdd('${String(t.name).replaceAll("'","\\'")}')">${t.name} +25</button>`});
+}
+function renderTeamControls(){
+  renderSelectors();
+  if(!teamEditor) return;
+  teamEditor.innerHTML='';
+  teams.forEach((t,i)=>{
+    const row=document.createElement('div'); row.className='team-item'+(t.active===false?' off':''); row.dataset.index=i;
+    const logoPath = t.logo || 'assets/logos/_FALTA_ESCUDO.png';
+    const missing = logoPath.includes('_FALTA_ESCUDO') || MISSING_LOGO_ABBRS.includes(String(t.abbr||'').toUpperCase());
+    row.innerHTML=`
+      <button type="button" class="eyeBtn ${t.active===false?'off':''}" title="Mostrar/ocultar na rodada" onclick="toggleTeamActive(${i})">${t.active===false?'🙈':'👁️'}</button>
+      <img class="logoPrev" src="${escapeHtml(logoPath)}" onerror="this.src='assets/logos/_FALTA_ESCUDO.png'">
+      <input data-k="name" oninput="applyPresetToRow(this.closest('.team-item'))" value="${escapeHtml(t.name||'')}" placeholder="Nome">
+      <input data-k="abbr" oninput="applyPresetToRow(this.closest('.team-item'))" value="${escapeHtml(t.abbr||'')}" placeholder="FLA">
+      <input data-k="color" type="color" value="${validColor(t.color)}">
+      <input data-k="logo" value="${escapeHtml(logoPath)}" placeholder="assets/logos/FLA.png">
+      <input data-k="keywords" value="${escapeHtml((t.keywords||[]).join(', '))}" placeholder="flamengo, fla, mengao">
+      <button type="button" class="uploadLogo" onclick="pickLogo(${i})">📁 Trocar</button>
+      <button class="danger mini" onclick="removeTeamRow(${i})">Remover</button>
+      ${missing?'<div class="missingBadge" style="grid-column:2 / -1">⚠️ Escudo oficial faltando: clique em 📁 Trocar e escolha a imagem do time.</div>':''}`;
+    teamEditor.appendChild(row);
+  });
+}
+function escapeHtml(x){return String(x).replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function validColor(c){return /^#[0-9a-f]{6}$/i.test(String(c||''))?c:'#eeeeee'}
+function collectTeams(){
+  const out=[];
+  document.querySelectorAll('#teamEditor .team-item').forEach(row=>{
+    const obj={}; row.querySelectorAll('input').forEach(inp=>obj[inp.dataset.k]=inp.value.trim());
+    obj.active = !row.classList.contains('off');
+    const preset=findTeamPreset(obj.name,obj.abbr);
+    if(preset){
+      obj.abbr=(obj.abbr||preset.abbr).toUpperCase();
+      obj.color=validColor(obj.color||preset.color);
+      obj.logo=obj.logo||preset.logo;
+      if(!obj.keywords) obj.keywords=(preset.keywords||[preset.name,preset.abbr]).join(', ');
+    }else{
+      obj.abbr=(obj.abbr||obj.name.slice(0,3)).toUpperCase();
+      obj.color=validColor(obj.color); obj.logo=obj.logo||`assets/logos/${obj.abbr}.png`;
+    }
+    obj.keywords=String(obj.keywords||'').split(/[,;]/).map(x=>x.trim()).filter(Boolean);
+    if(obj.name) out.push(obj);
+  });
+  teams=out; return out;
+}
+
+async function pickLogo(i){
+  collectTeams();
+  const t=teams[i]; if(!t) return;
+  const inp=document.createElement('input'); inp.type='file'; inp.accept='image/png,image/jpeg,image/webp';
+  inp.onchange=async()=>{
+    const file=inp.files && inp.files[0]; if(!file) return;
+    const msg=document.getElementById('teamSaveMsg');
+    const fd=new FormData(); fd.append('abbr', (t.abbr||t.name||'TIME').toUpperCase()); fd.append('logo', file);
+    msg.textContent='Enviando escudo...';
+    try{
+      const r=await fetch(API+'/upload_logo',{method:'POST',body:fd}); const j=await r.json();
+      if(j.ok){ teams[i].logo=j.logo; renderTeamControls(); teamEditing=true; userEditing=true; msg.textContent='✅ Escudo enviado. Clique em SALVAR TIMES para aplicar.'; }
+      else{ msg.textContent='❌ '+(j.error||'Erro ao enviar escudo.'); }
+    }catch(e){ msg.textContent='❌ Abra o ABRIR_PROGRAMA.bat para enviar escudo.'; }
+  };
+  inp.click();
+}
+
+function addTeamRow(){ collectTeams(); teams.push({name:'Novo Time',abbr:'NOV',color:'#eeeeee',logo:'assets/logos/NOV.png',keywords:['novo time','nov'],active:true}); renderTeamControls(); userEditing=true; teamEditing=true; }
+function removeTeamRow(i){ collectTeams(); teams.splice(i,1); renderTeamControls(); userEditing=true; teamEditing=true; }
+function toggleTeamActive(i){ collectTeams(); if(teams[i]) teams[i].active = teams[i].active===false ? true : false; renderTeamControls(); userEditing=true; teamEditing=true; document.getElementById('teamSaveMsg').textContent='Clique em SALVAR TIMES para aplicar a rodada.'; }
+function setAllTeamsActive(v){ collectTeams(); teams.forEach(t=>t.active=!!v); renderTeamControls(); userEditing=true; teamEditing=true; document.getElementById('teamSaveMsg').textContent='Clique em SALVAR TIMES para aplicar a rodada.'; }
+async function saveTeams(){
+  const body={teams:collectTeams()};
+  const msg=document.getElementById('teamSaveMsg');
+  try{
+    const r=await fetch(API+'/save_teams',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    const j=await r.json();
+    if(j.ok){ teamEditing=false; userEditing=false; fillConfig(j.config,true); msg.textContent='✅ Times salvos. Overlay atualizado.'; log('Times salvos com sucesso.'); }
+    else{ msg.textContent='❌ Erro ao salvar times.'; log(JSON.stringify(j)); }
+  }catch(e){ msg.textContent='❌ Servidor não abriu.'; log('Servidor não abriu para salvar times.'); }
+}
+async function api(path, opts={}){try{const r=await fetch(API+path,{cache:'no-store',...opts}); const j=await r.json(); if(j.config) fillConfig(j.config, opts.force===true); if(j.status) setConn(j.status); log(JSON.stringify(j,null,2)); return j}catch(e){log('Servidor não abriu. Abra ABRIR_PROGRAMA.bat e use http://127.0.0.1:8787/painel')}}
+function loadConfigOnly(){teamEditing=false; userEditing=false; api('/config',{force:true})}
+function setConn(st){if(!st) return; if(st.connected){conn.className='pill on'; conn.textContent='🟢 CONECTADO @'+st.user}else if(st.connecting){conn.className='pill'; conn.textContent='🟡 CONECTANDO @'+st.user}else{conn.className='pill'; conn.textContent='🔴 '+(st.message||'OFFLINE')}}
+async function connect(){const inp=document.getElementById('user'); const btn=document.getElementById('btnConnect'); const usuario=(inp.value||'').replace('@','').trim(); if(!usuario){ log('Digite o @ da live antes de conectar.'); inp.focus(); return; } btn.disabled=true; btn.textContent='Conectando...'; try{ await api('/connect?user='+encodeURIComponent(usuario)); } finally{ setTimeout(()=>{btn.disabled=false; btn.textContent='Conectar';},1500); }}
+function disconnect(){api('/disconnect')} function add(){api('/add?team='+encodeURIComponent(sel.value)+'&amount='+document.getElementById('amount').value)} function quickAdd(t){api('/add?team='+encodeURIComponent(t)+'&amount='+document.getElementById('gift_default').value)}
+async function saveConfig(auto=false){
+  if(savingNow) return;
+  savingNow=true;
+  const params=new URLSearchParams();
+  configKeys.forEach(k=>params.set(k,val(k)));
+  // Não salva a lista de times aqui. Times são salvos apenas pelo botão 💾 Salvar times.
+
+  try{
+    const j = await api('/set_config?'+params.toString(), {force:true});
+    if(j && j.ok){
+      if(auto) log('✅ Alteração aplicada em tempo real.');
+      // Mantém modo de edição quando o usuário está alterando os times.
+      if(!teamEditing) userEditing=false;
+    }
+  }finally{ savingNow=false; }
+}
+async function resetOnlyPoints(){
+  const ok=confirm('Zerar somente os pontos de todos os times?\n\nOs troféus e o ranking de campeões serão mantidos.');
+  if(!ok) return;
+  const j=await api('/reset?full=0');
+  if(j&&j.ok) log('✅ Pontos zerados. Troféus e campeões mantidos.');
+}
+async function resetEverything(){
+  const ok=confirm('ATENÇÃO: isso vai zerar os pontos E todos os troféus. Deseja continuar?');
+  if(!ok) return;
+  const j=await api('/reset?full=1');
+  if(j&&j.ok) log('⚠️ Campeonato completo zerado.');
+}
+function resetRace(full){return full?resetEverything():resetOnlyPoints()} function testTikTok(){api('/test_tiktok?team='+encodeURIComponent(sel.value)+'&amount='+document.getElementById('amount').value+'&user='+encodeURIComponent(document.getElementById('testUser').value)+'&gift='+encodeURIComponent(document.getElementById('testGift').value))}
+function startStream(){try{const es=new EventSource(API+'/stream'); es.onmessage=e=>{const m=JSON.parse(e.data); if(m.config && (!userEditing || m.kind==='hello' || m.kind==='event')) fillConfig(m.config, m.kind==='hello'); if(m.status) setConn(m.status); if(m.kind==='event') log('EVENTO: '+JSON.stringify(m.payload)); if(m.kind==='status') log('STATUS: '+JSON.stringify(m.status));}; es.onerror=()=>log('Tentando reconectar ao servidor...')}catch(e){setInterval(()=>api('/status'),3000)}}
+if(teamEditor){
+  teamEditor.addEventListener('focusin',()=>{teamEditing=true; userEditing=true;});
+  teamEditor.addEventListener('input',()=>{teamEditing=true; userEditing=true;});
+}
+const WINS_BOARD_SETTINGS_KEY='corrida_wins_board_settings';
+function getWinsBoardSettings(){
+  try{return Object.assign({size:75,x:50,y:50},JSON.parse(localStorage.getItem(WINS_BOARD_SETTINGS_KEY)||'{}'))}catch(e){return {size:75,x:50,y:50}}
+}
+function loadWinsBoardSettings(){
+  const st=getWinsBoardSettings();
+  const size=document.getElementById('winsBoardSize'), x=document.getElementById('winsBoardX'), y=document.getElementById('winsBoardY');
+  if(size) size.value=st.size; if(x) x.value=st.x; if(y) y.value=st.y;
+  updateWinsBoardLabels();
+}
+function updateWinsBoardLabels(){
+  const size=document.getElementById('winsBoardSize'), x=document.getElementById('winsBoardX'), y=document.getElementById('winsBoardY');
+  if(size) document.getElementById('winsSizeValue').textContent=size.value+'%';
+  if(x) document.getElementById('winsXValue').textContent=x.value+'%';
+  if(y) document.getElementById('winsYValue').textContent=y.value+'%';
+}
+function updateWinsBoardSettings(){
+  const st={size:Number(document.getElementById('winsBoardSize')?.value||75),x:Number(document.getElementById('winsBoardX')?.value||50),y:Number(document.getElementById('winsBoardY')?.value||50)};
+  localStorage.setItem(WINS_BOARD_SETTINGS_KEY,JSON.stringify({...st,at:Date.now()})); updateWinsBoardLabels();
+}
+function changeWinsSize(delta){
+  const el=document.getElementById('winsBoardSize'); if(!el)return; el.value=Math.max(Number(el.min),Math.min(Number(el.max),Number(el.value)+delta)); updateWinsBoardSettings();
+}
+function resetWinsBoardSettings(){
+  document.getElementById('winsBoardSize').value=75; document.getElementById('winsBoardX').value=50; document.getElementById('winsBoardY').value=50; updateWinsBoardSettings();
+}
+function renderPanelWins(){
+  const box=document.getElementById('panelWinsList'); if(!box) return;
+  let saved={}; try{saved=JSON.parse(localStorage.getItem('corrida_times_tiktok_mod29')||'{}')}catch(e){}
+  const ordered=[...teams]
+    .map(t=>({...t,wins:Number((saved[t.abbr]&&saved[t.abbr].wins)||0)}))
+    .filter(t=>t.wins>0)
+    .sort((a,b)=>b.wins-a.wins||a.name.localeCompare(b.name));
+  box.innerHTML=ordered.length ? ordered.map((t,i)=>`<div style="display:grid;grid-template-columns:52px 84px 1fr;align-items:center;gap:14px;border-bottom:1px solid #ffffff22;padding:10px"><b style="color:#ffd400;font-size:20px">${i+1}º</b><img src="${escapeHtml(t.logo||'assets/logos/_FALTA_ESCUDO.png')}" alt="${escapeHtml(t.name)}" title="${escapeHtml(t.name)}" style="width:72px;height:72px;object-fit:contain" onerror="this.src='assets/logos/_FALTA_ESCUDO.png'"><span style="color:#7dffbd;font-weight:900;font-size:17px">${t.wins} ${t.wins===1?'VITÓRIA':'VITÓRIAS'}</span></div>`).join('') : '<div style="padding:30px;text-align:center;font-weight:900">Nenhum time tem vitória ainda.</div>';
+}
+async function controlBoard(board,action){
+  const j=await api('/board_control?board='+encodeURIComponent(board)+'&action='+encodeURIComponent(action));
+  const nome=board==='scorers'?'Artilheiros':'Maiores Campeões';
+  const acao=action==='show'?'MOSTRADO':action==='hide'?'FECHADO':'ALTERADO';
+  const texto=j&&j.ok ? `✅ ${nome}: ${acao} na tela da live.` : `❌ Não foi possível controlar ${nome}.`;
+  const msg=document.getElementById('teamSaveMsg');
+  const mobileMsg=document.getElementById('boardControlStatus');
+  if(msg) msg.textContent=texto;
+  if(mobileMsg) mobileMsg.textContent=texto;
+  return j;
+}
+function controlWinsBoard(action){ return controlBoard('champions',action); }
+function openOverlayAndWins(){window.open('/overlay','_blank'); setTimeout(renderPanelWins,500)}
+document.addEventListener('keydown',e=>{
+  if(String(e.key||'').toLowerCase()==='v' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)) controlBoard('champions','toggle');
+});
+window.addEventListener('storage',e=>{if(e.key==='corrida_times_tiktok_mod29') renderPanelWins()});
+document.querySelectorAll('input[type=range]').forEach(i=>i.addEventListener('input',updateLabels));
+loadWinsBoardSettings(); api('/config',{force:true}); startStream(); setInterval(()=>api('/status'),5000); updateLabels();
+</script>
+</body>
+</html>

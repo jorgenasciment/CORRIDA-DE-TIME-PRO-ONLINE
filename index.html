@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Corrida Times TikTok - Módulo 20 Ranking Móvel</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+  <button id="mobile-fullscreen" type="button" onclick="enterMobileFullscreen()">⛶ TELA CHEIA</button>
+  <main id="game">
+    <div class="stadium-glow glow-a"></div>
+    <div class="stadium-glow glow-b"></div>
+    <div class="stadium-glow glow-c"></div>
+
+    <div id="ranking-title">🏆 MAIORES CAMPEÕES</div>
+
+    <header id="top">
+      <div class="champion-card gold" id="top1"><div class="mini-badge"><img alt="campeão"><span>---</span></div>
+        <div class="champ-data"><small>TOP 1</small><strong>0</strong><span>VITÓRIAS</span></div>
+      </div>
+      <div class="champion-card silver" id="top2"><div class="mini-badge"><img alt="campeão"><span>---</span></div>
+        <div class="champ-data"><small>TOP 2</small><strong>0</strong><span>VITÓRIAS</span></div>
+      </div>
+      <div class="champion-card bronze" id="top3"><div class="mini-badge"><img alt="campeão"><span>---</span></div>
+        <div class="champ-data"><small>TOP 3</small><strong>0</strong><span>VITÓRIAS</span></div>
+      </div>
+      <div class="champion-card fourth extra-top" id="top4"><div class="mini-badge"><img alt="campeão"><span>---</span></div>
+        <div class="champ-data"><small>TOP 4</small><strong>0</strong><span>VITÓRIAS</span></div>
+      </div>
+      <div class="champion-card fifth extra-top" id="top5"><div class="mini-badge"><img alt="campeão"><span>---</span></div>
+        <div class="champ-data"><small>TOP 5</small><strong>0</strong><span>VITÓRIAS</span></div>
+      </div>
+    </header>
+
+    <div id="race-rank-title">📊 RANKING</div>
+
+    <section id="ruler"><span>0</span><span>75</span><span>150</span><span>225</span><span>300</span></section>
+    <section id="race"></section>
+    <div id="finish-line">
+      <div class="finish-trophy">🏆</div>
+      <div class="finish-arch"><span>CHEGADA</span></div>
+      <div class="finish-led left"></div>
+      <div class="finish-led right"></div>
+      <div class="finish-energy"></div>
+      <div class="finish-label">CHEGADA</div>
+    </div>
+
+    <div id="champion-alert">
+      <div class="crown">👑</div>
+      <div class="champion-logo"><img alt="campeão"></div>
+      <div class="champion-text">CAMPEÃO!</div>
+      <div class="champion-sub">+1 VITÓRIA</div>
+    </div>
+
+    <div id="combo-toast"></div>
+    <div id="live-status">🔴 OFFLINE</div>
+    <div id="last-gift">
+      <div class="gift-title">ÚLTIMO APOIO</div>
+      <div class="gift-line" id="gift-line">Aguardando TikTok...</div>
+    </div>
+    <div id="confetti"></div>
+    <div id="wins-board">
+      <div class="wins-board-header"><span>🏆 VITÓRIAS DOS TIMES</span><small>V = ABRIR/FECHAR</small></div>
+      <div id="wins-board-list"></div>
+    </div>
+
+  </main>
+  <script>
+    (function(){
+      const params=new URLSearchParams(location.search);
+      const modo=(params.get('modo')||'').toLowerCase();
+      const isMobile=modo==='celular'||modo==='mobile'||(/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)&&modo!=='pc');
+      document.body.classList.add(isMobile?'modo-celular':'modo-pc');
+    })();
+    async function enterMobileFullscreen(){
+      try{
+        const el=document.documentElement;
+        if(el.requestFullscreen) await el.requestFullscreen();
+        else if(el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+        if(screen.orientation&&screen.orientation.lock){ try{ await screen.orientation.lock('portrait'); }catch(e){} }
+        document.getElementById('mobile-fullscreen').classList.add('hidden');
+      }catch(e){}
+    }
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

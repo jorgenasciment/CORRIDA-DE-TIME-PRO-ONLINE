@@ -1,0 +1,673 @@
+{
+  "port": 8787,
+  "meta": 400,
+  "show_finish_label": false,
+  "finish_label_text": "CHEGADA",
+  "finish_label_size": 32,
+  "finish_label_x": -4,
+  "finish_label_y": 42,
+  "finish_label_rotation": -90,
+  "finish_label_color": "#ffffff",
+  "finish_label_glow_color": "#ffffff",
+  "finish_label_glow": 30,
+  "comment_points": 0,
+  "diamond_multiplier": 1,
+  "gift_default": 200,
+  "champion_duration": 13,
+  "tournament_timer_enabled": true,
+  "tournament_minutes": 3,
+  "tournament_timer_opacity": 27,
+  "champion_size": 120,
+  "champion_name_size": 38,
+  "show_goal_text": false,
+  "show_champion_name": true,
+  "show_live_status": false,
+  "show_ranking": true,
+  "show_top5": false,
+  "ranking_scale": 102,
+  "ranking_logo_size": 37,
+  "ranking_score_size": 22,
+  "ranking_logo_x": 0,
+  "ranking_logo_y": 0,
+  "ranking_score_x": 0,
+  "ranking_score_y": 0,
+  "ranking_victory_x": 0,
+  "ranking_victory_y": 0,
+  "ranking_position_size": 15,
+  "ranking_gap": 2,
+  "ranking_height": 79,
+  "ranking_title_text": "🏆 MAIORES CAMPEÕES",
+  "show_ranking_title": true,
+  "ranking_title_x": 48,
+  "ranking_title_y": 2,
+  "ranking_title_scale": 87,
+  "ranking_title_color": "#ffd400",
+  "show_race_rank_title": true,
+  "race_rank_title_text": "PARTIDA",
+  "race_rank_title_x": 46,
+  "race_rank_title_y": 13,
+  "race_rank_title_width": 88,
+  "race_rank_title_height": 38,
+  "race_rank_title_scale": 73,
+  "race_rank_title_color": "#ffffff",
+  "effect_time": 1,
+  "lightning_power": 100,
+  "ultra_gift_enabled": true,
+  "ultra_gift_threshold": 99,
+  "ultra_gift_text": "O BRABO TA NA CASA ",
+  "ultra_gift_duration": 5,
+  "ultra_gift_cinematic": true,
+  "ultra_gift_slowmo": true,
+  "ultra_gift_dim": true,
+  "ultra_gift_shockwave": true,
+  "ultra_gift_particles": true,
+  "ultra_gift_rays": true,
+  "comment_enabled": true,
+  "gift_enabled": true,
+  "like_enabled": true,
+  "likes_required": 90,
+  "like_points": 1,
+  "teams": [
+    {
+      "name": "Athletico-PR",
+      "abbr": "CAP",
+      "color": "#d71920",
+      "logo": "assets/logos/CAP.png",
+      "keywords": [
+        "Athletico-PR",
+        "CAP",
+        "athletico pr",
+        "athletico",
+        "athletico paranaense",
+        "cap",
+        "furacao",
+        "furacão"
+      ],
+      "active": true
+    },
+    {
+      "name": "Atlético-MG",
+      "abbr": "CAM",
+      "color": "#f1f1f1",
+      "logo": "assets/logos/CAM.png",
+      "keywords": [
+        "Atlético-MG",
+        "CAM",
+        "atletico mg",
+        "atlético mg",
+        "atlético mineiro",
+        "atletico mineiro",
+        "cam",
+        "galo"
+      ],
+      "active": true
+    },
+    {
+      "name": "Bahia",
+      "abbr": "BAH",
+      "color": "#008ee6",
+      "logo": "assets/logos/BAH.png",
+      "keywords": [
+        "Bahia",
+        "BAH",
+        "bahia",
+        "bah",
+        "esquadrao",
+        "esquadrão"
+      ],
+      "active": true
+    },
+    {
+      "name": "Botafogo",
+      "abbr": "BOT",
+      "color": "#eeeeee",
+      "logo": "assets/logos/BOT.png",
+      "keywords": [
+        "Botafogo",
+        "BOT",
+        "botafogo",
+        "bot",
+        "fogao",
+        "fogão"
+      ],
+      "active": true
+    },
+    {
+      "name": "Chapecoense",
+      "abbr": "CHA",
+      "color": "#1fad4b",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Chapecoense",
+        "CHA",
+        "chapecoense",
+        "chape",
+        "cha"
+      ],
+      "active": false
+    },
+    {
+      "name": "Corinthians",
+      "abbr": "COR",
+      "color": "#eeeeee",
+      "logo": "assets/logos/COR.png",
+      "keywords": [
+        "Corinthians",
+        "COR",
+        "corinthians",
+        "cor",
+        "timao",
+        "timão"
+      ],
+      "active": true
+    },
+    {
+      "name": "Coritiba",
+      "abbr": "CTB",
+      "color": "#159447",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Coritiba",
+        "CTB",
+        "coritiba",
+        "coxa",
+        "ctb"
+      ],
+      "active": false
+    },
+    {
+      "name": "Cruzeiro",
+      "abbr": "CRU",
+      "color": "#0057b8",
+      "logo": "assets/logos/CRU.png",
+      "keywords": [
+        "Cruzeiro",
+        "CRU",
+        "cruzeiro",
+        "cru",
+        "raposa"
+      ],
+      "active": true
+    },
+    {
+      "name": "Flamengo",
+      "abbr": "FLA",
+      "color": "#e90016",
+      "logo": "assets/logos/FLA.png",
+      "keywords": [
+        "Flamengo",
+        "FLA",
+        "flamengo",
+        "fla",
+        "mengao",
+        "mengão"
+      ],
+      "active": true
+    },
+    {
+      "name": "Fluminense",
+      "abbr": "FLU",
+      "color": "#006b3f",
+      "logo": "assets/logos/FLU.png",
+      "keywords": [
+        "Fluminense",
+        "FLU",
+        "fluminense",
+        "flu",
+        "tricolor carioca"
+      ],
+      "active": true
+    },
+    {
+      "name": "Grêmio",
+      "abbr": "GRE",
+      "color": "#00a3e0",
+      "logo": "assets/logos/GRE.png",
+      "keywords": [
+        "Grêmio",
+        "GRE",
+        "gremio",
+        "grêmio",
+        "gre"
+      ],
+      "active": true
+    },
+    {
+      "name": "Internacional",
+      "abbr": "INT",
+      "color": "#df0000",
+      "logo": "assets/logos/INT.png",
+      "keywords": [
+        "Internacional",
+        "INT",
+        "internacional",
+        "inter",
+        "int",
+        "colorado"
+      ],
+      "active": true
+    },
+    {
+      "name": "Mirassol",
+      "abbr": "MIR",
+      "color": "#d4d400",
+      "logo": "assets/logos/MIR.png",
+      "keywords": [
+        "Mirassol",
+        "MIR",
+        "mirassol",
+        "mir"
+      ],
+      "active": false
+    },
+    {
+      "name": "Palmeiras",
+      "abbr": "PAL",
+      "color": "#22b14c",
+      "logo": "assets/logos/PAL.png",
+      "keywords": [
+        "Palmeiras",
+        "PAL",
+        "palmeiras",
+        "pal",
+        "porco",
+        "verdao",
+        "verdão"
+      ],
+      "active": true
+    },
+    {
+      "name": "RB Bragantino",
+      "abbr": "RBB",
+      "color": "#e40046",
+      "logo": "assets/logos/RBB.png",
+      "keywords": [
+        "RB Bragantino",
+        "RBB",
+        "bragantino",
+        "rb bragantino",
+        "red bull bragantino",
+        "rbb"
+      ],
+      "active": false
+    },
+    {
+      "name": "Remo",
+      "abbr": "REM",
+      "color": "#003b75",
+      "logo": "assets/logos/REM.png",
+      "keywords": [
+        "Remo",
+        "REM",
+        "remo",
+        "rem"
+      ],
+      "active": true
+    },
+    {
+      "name": "Santos",
+      "abbr": "SAN",
+      "color": "#eeeeee",
+      "logo": "assets/logos/SAN.png",
+      "keywords": [
+        "Santos",
+        "SAN",
+        "santos",
+        "san",
+        "peixe"
+      ],
+      "active": true
+    },
+    {
+      "name": "São Paulo",
+      "abbr": "SPFC",
+      "color": "#d71920",
+      "logo": "assets/logos/SPFC.png",
+      "keywords": [
+        "São Paulo",
+        "SPFC",
+        "sao paulo",
+        "são paulo",
+        "spfc",
+        "tricolor paulista"
+      ],
+      "active": true
+    },
+    {
+      "name": "Vasco",
+      "abbr": "VAS",
+      "color": "#eeeeee",
+      "logo": "assets/logos/VAS.png",
+      "keywords": [
+        "Vasco",
+        "VAS",
+        "vasco",
+        "vas",
+        "vasco da gama"
+      ],
+      "active": true
+    },
+    {
+      "name": "Vitória",
+      "abbr": "VIT",
+      "color": "#c90000",
+      "logo": "assets/logos/VIT.png",
+      "keywords": [
+        "Vitória",
+        "VIT",
+        "vitoria",
+        "vitória",
+        "vit"
+      ],
+      "active": true
+    },
+    {
+      "name": "Vila Nova",
+      "abbr": "VNO",
+      "color": "#d71920",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Vila Nova",
+        "VNO",
+        "vila nova",
+        "vila",
+        "vno",
+        "tigrão",
+        "tigrao"
+      ],
+      "active": false
+    },
+    {
+      "name": "Fortaleza",
+      "abbr": "FOR",
+      "color": "#0067b1",
+      "logo": "assets/logos/FOR.png",
+      "keywords": [
+        "Fortaleza",
+        "FOR",
+        "fortaleza",
+        "for",
+        "leao",
+        "leão"
+      ],
+      "active": true
+    },
+    {
+      "name": "Ceará",
+      "abbr": "CEA",
+      "color": "#eeeeee",
+      "logo": "assets/logos/CEA.png",
+      "keywords": [
+        "Ceará",
+        "CEA",
+        "ceara",
+        "ceará",
+        "cea",
+        "vozao",
+        "vozão"
+      ],
+      "active": true
+    },
+    {
+      "name": "Novorizontino",
+      "abbr": "NOV",
+      "color": "#f2c300",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Novorizontino",
+        "NOV",
+        "novorizontino",
+        "gremio novorizontino",
+        "grêmio novorizontino",
+        "nov"
+      ],
+      "active": false
+    },
+    {
+      "name": "Avaí",
+      "abbr": "AVA",
+      "color": "#0067b1",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Avaí",
+        "AVA",
+        "avai",
+        "avaí",
+        "ava"
+      ],
+      "active": false
+    },
+    {
+      "name": "Athletic Club",
+      "abbr": "ATH",
+      "color": "#111111",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Athletic Club",
+        "ATH",
+        "athletic",
+        "athletic club",
+        "ath"
+      ],
+      "active": false
+    },
+    {
+      "name": "Operário-PR",
+      "abbr": "OPE",
+      "color": "#eeeeee",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Operário-PR",
+        "OPE",
+        "operario",
+        "operário",
+        "operario pr",
+        "operário pr",
+        "ope"
+      ],
+      "active": false
+    },
+    {
+      "name": "Botafogo-SP",
+      "abbr": "BSP",
+      "color": "#eeeeee",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Botafogo-SP",
+        "BSP",
+        "botafogo sp",
+        "botafogo-sp",
+        "botafogo ribeirao",
+        "botafogo ribeirão",
+        "bsp"
+      ],
+      "active": false
+    },
+    {
+      "name": "São Bernardo",
+      "abbr": "SBE",
+      "color": "#f2d000",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "São Bernardo",
+        "SBE",
+        "sao bernardo",
+        "são bernardo",
+        "sbe"
+      ],
+      "active": false
+    },
+    {
+      "name": "Criciúma",
+      "abbr": "CRI",
+      "color": "#f5d20a",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Criciúma",
+        "CRI",
+        "criciuma",
+        "criciúma",
+        "cri",
+        "tigre"
+      ],
+      "active": false
+    },
+    {
+      "name": "Juventude",
+      "abbr": "JUV",
+      "color": "#149657",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Juventude",
+        "JUV",
+        "juventude",
+        "juv"
+      ],
+      "active": false
+    },
+    {
+      "name": "Goiás",
+      "abbr": "GOI",
+      "color": "#0c8c42",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Goiás",
+        "GOI",
+        "goias",
+        "goiás",
+        "goi",
+        "esmeraldino"
+      ],
+      "active": false
+    },
+    {
+      "name": "Sport",
+      "abbr": "SPT",
+      "color": "#e00000",
+      "logo": "assets/logos/SPT.png",
+      "keywords": [
+        "Sport",
+        "SPT",
+        "sport",
+        "sport recife",
+        "spt",
+        "leao da ilha",
+        "leão da ilha"
+      ],
+      "active": true
+    },
+    {
+      "name": "Náutico",
+      "abbr": "NAU",
+      "color": "#e00000",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Náutico",
+        "NAU",
+        "nautico",
+        "náutico",
+        "nau",
+        "timbu"
+      ],
+      "active": false
+    },
+    {
+      "name": "Cuiabá",
+      "abbr": "CUI",
+      "color": "#d9c300",
+      "logo": "assets/logos/CUI.png",
+      "keywords": [
+        "Cuiabá",
+        "CUI",
+        "cuiaba",
+        "cuiabá",
+        "cui",
+        "dourado"
+      ],
+      "active": false
+    },
+    {
+      "name": "Londrina",
+      "abbr": "LON",
+      "color": "#00a6df",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Londrina",
+        "LON",
+        "londrina",
+        "lon",
+        "tubarao",
+        "tubarão"
+      ],
+      "active": false
+    },
+    {
+      "name": "Atlético-GO",
+      "abbr": "ACG",
+      "color": "#e00000",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Atlético-GO",
+        "ACG",
+        "atletico go",
+        "atlético go",
+        "atletico goianiense",
+        "atlético goianiense",
+        "acg",
+        "dragao",
+        "dragão"
+      ],
+      "active": false
+    },
+    {
+      "name": "Ponte Preta",
+      "abbr": "PON",
+      "color": "#eeeeee",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "Ponte Preta",
+        "PON",
+        "ponte preta",
+        "ponte",
+        "pon",
+        "macaca"
+      ],
+      "active": false
+    },
+    {
+      "name": "CRB",
+      "abbr": "CRB",
+      "color": "#e00000",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "CRB",
+        "crb",
+        "regatas"
+      ],
+      "active": false
+    },
+    {
+      "name": "América-MG",
+      "abbr": "AME",
+      "color": "#159447",
+      "logo": "assets/logos/_FALTA_ESCUDO.png",
+      "keywords": [
+        "América-MG",
+        "AME",
+        "america mg",
+        "américa mg",
+        "america mineiro",
+        "américa mineiro",
+        "ame",
+        "coelho"
+      ],
+      "active": false
+    }
+  ],
+  "tournament_timer_x": 52,
+  "tournament_timer_y": 50,
+  "tournament_timer_scale": 123,
+  "ranking_x": 50,
+  "ranking_y": 2,
+  "ranking_width": 100
+}

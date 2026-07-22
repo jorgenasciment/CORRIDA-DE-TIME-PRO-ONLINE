@@ -1,0 +1,14 @@
+CONFIGURACAO CORRETA NO RENDER
+
+Language: Python 3
+Root Directory: deixar vazio
+Build Command: pip install -r requirements.txt
+Start Command: python server/main.py
+Instance Type: Free
+Environment Variables: deixar vazio
+
+Depois clique em Manual Deploy > Deploy latest commit.
+
+LINKS DEPOIS QUE FICAR LIVE:
+Painel: https://SEU-LINK.onrender.com/painel
+Jogo: https://SEU-LINK.onrender.com/overlay?modo=celular

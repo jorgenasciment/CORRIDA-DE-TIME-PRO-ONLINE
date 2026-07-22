@@ -1,0 +1,994 @@
+{
+  "teams": {
+    "GRE": {
+      "score": 0,
+      "wins": 41
+    },
+    "SPFC": {
+      "score": 0,
+      "wins": 27
+    },
+    "VIT": {
+      "score": 0,
+      "wins": 24
+    },
+    "CRU": {
+      "score": 0,
+      "wins": 11
+    },
+    "COR": {
+      "score": 0,
+      "wins": 8
+    },
+    "BAH": {
+      "score": 0,
+      "wins": 7
+    },
+    "FLA": {
+      "score": 0,
+      "wins": 6
+    },
+    "REM": {
+      "score": 0,
+      "wins": 6
+    },
+    "FLU": {
+      "score": 0,
+      "wins": 3
+    },
+    "BOT": {
+      "score": 0,
+      "wins": 1
+    },
+    "PAL": {
+      "score": 0,
+      "wins": 1
+    },
+    "SPT": {
+      "score": 0,
+      "wins": 1
+    },
+    "CAP": {
+      "score": 0,
+      "wins": 0
+    },
+    "CAM": {
+      "score": 0,
+      "wins": 0
+    },
+    "CEA": {
+      "score": 0,
+      "wins": 0
+    },
+    "FOR": {
+      "score": 0,
+      "wins": 0
+    },
+    "INT": {
+      "score": 0,
+      "wins": 0
+    },
+    "SAN": {
+      "score": 0,
+      "wins": 0
+    },
+    "VAS": {
+      "score": 0,
+      "wins": 0
+    }
+  },
+  "scorers": {
+    "PAL": {
+      "ᴀɴɴᴇ ʟᴜɪsᴀ": {
+        "name": "ᴀɴɴᴇ ʟᴜɪsᴀ",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "jardson pontes": {
+        "name": "Jardson pontes",
+        "avatar": "",
+        "diamonds": 3
+      },
+      "pedro augusto 💸": {
+        "name": "Pedro Augusto 💸",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "freitas10": {
+        "name": "Freitas10",
+        "avatar": "",
+        "diamonds": 3
+      },
+      "mthz 013 💤": {
+        "name": "MThz 013 💤",
+        "avatar": "",
+        "diamonds": 10
+      },
+      "wagner ferreira": {
+        "name": "Wagner Ferreira",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "💚palmeirense💚": {
+        "name": "💚PALMEIRENSE💚",
+        "avatar": "",
+        "diamonds": 99
+      },
+      "brazil": {
+        "name": "Brazil",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "victoroliveirad85": {
+        "name": "victoroliveirad85",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "o bruno machado": {
+        "name": "o Bruno Machado",
+        "avatar": "",
+        "diamonds": 83
+      },
+      "beetzinho": {
+        "name": "BEETZINHO",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "guutooooo": {
+        "name": "Guutooooo",
+        "avatar": "",
+        "diamonds": 2
+      }
+    },
+    "FLA": {
+      "dv😶‍🌫️": {
+        "name": "DV😶‍🌫️",
+        "avatar": "",
+        "diamonds": 3
+      },
+      "maicon mahon": {
+        "name": "Maicon Mahon",
+        "avatar": "",
+        "diamonds": 35
+      },
+      "sabrina viveiros": {
+        "name": "Sabrina Viveiros",
+        "avatar": "",
+        "diamonds": 8
+      },
+      "menor_chefin.7": {
+        "name": "menor_chefin.7",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "@miguellxz_nx": {
+        "name": "@miguellxz_nx",
+        "avatar": "",
+        "diamonds": 5
+      },
+      "🫅dͧiᷠoͥgͨoͦ 💯": {
+        "name": "🫅Dͧiᷠoͥgͨoͦ 💯",
+        "avatar": "",
+        "diamonds": 30
+      },
+      "moraes.": {
+        "name": "Moraes.",
+        "avatar": "",
+        "diamonds": 8
+      },
+      "luiz_flamengo": {
+        "name": "Luiz_Flamengo",
+        "avatar": "",
+        "diamonds": 4
+      },
+      "g_romeu": {
+        "name": "g_romeu",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "sami 💯juízo ": {
+        "name": "Sami 💯juízo ",
+        "avatar": "",
+        "diamonds": 6
+      },
+      "carlos eduardo": {
+        "name": "Carlos Eduardo",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "maria clara": {
+        "name": "Maria Clara",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "jeferson": {
+        "name": "Jeferson",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "wagner": {
+        "name": "Wagner",
+        "avatar": "",
+        "diamonds": 1
+      }
+    },
+    "CAM": {
+      "𝓐𝓷𝓽𝓾𝓷𝓮𝓼🩷": {
+        "name": "𝓐𝓷𝓽𝓾𝓷𝓮𝓼🩷",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "elina": {
+        "name": "Elina",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "micael_borges0": {
+        "name": "micael_borges0",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "charllesjesus39": {
+        "name": "charllesjesus39",
+        "avatar": "",
+        "diamonds": 47
+      }
+    },
+    "COR": {
+      "nicolas013": {
+        "name": "Nicolas013",
+        "avatar": "",
+        "diamonds": 15
+      },
+      "eduardo": {
+        "name": "Eduardo",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "silva": {
+        "name": "Silva",
+        "avatar": "",
+        "diamonds": 3
+      },
+      "roma": {
+        "name": "Roma",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "arthurnishikawa63": {
+        "name": "arthurnishikawa63",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "ws💢🤫": {
+        "name": "WS💢🤫",
+        "avatar": "",
+        "diamonds": 148
+      },
+      "jesussantos1986": {
+        "name": "jesussantos1986",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "mlk.davi11": {
+        "name": "mlk.davi11",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "cauã corral": {
+        "name": "Cauã corral",
+        "avatar": "",
+        "diamonds": 60
+      },
+      "kaiuzinho157": {
+        "name": "kaiuzinho157",
+        "avatar": "",
+        "diamonds": 252
+      },
+      "ueliton douglas": {
+        "name": "Ueliton Douglas",
+        "avatar": "",
+        "diamonds": 122
+      },
+      "red": {
+        "name": "Red",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "wevertonsantos2005": {
+        "name": "wevertonsantos2005",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "rair castro 22": {
+        "name": "Rair castro 22",
+        "avatar": "",
+        "diamonds": 5
+      },
+      "geanprado": {
+        "name": "geanprado",
+        "avatar": "",
+        "diamonds": 99
+      },
+      "luisin 🇻🇦": {
+        "name": "luisin 🇻🇦",
+        "avatar": "",
+        "diamonds": 10
+      },
+      "🛡️🗡️ victor cruz": {
+        "name": "🛡️🗡️ Victor Cruz",
+        "avatar": "",
+        "diamonds": 20
+      },
+      "edson sousa": {
+        "name": "Edson Sousa",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "🥷🏼": {
+        "name": "🥷🏼",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "clayver41": {
+        "name": "clayver41",
+        "avatar": "",
+        "diamonds": 20
+      },
+      "jailton teixeira": {
+        "name": "Jailton Teixeira",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "joelmasilva6277": {
+        "name": "joelmasilva6277",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "🎀rubya🎀": {
+        "name": "🎀RUBYA🎀",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "⚡⚡liso dos liso🥇": {
+        "name": "⚡⚡Liso dos liso🥇",
+        "avatar": "",
+        "diamonds": 237
+      },
+      "douglas dg": {
+        "name": "Douglas DG",
+        "avatar": "",
+        "diamonds": 48
+      }
+    },
+    "GRE": {
+      "brunokrausdaluz": {
+        "name": "brunokrausdaluz",
+        "avatar": "",
+        "diamonds": 154
+      },
+      "leo🙂‍↕️": {
+        "name": "LEO🙂‍↕️",
+        "avatar": "",
+        "diamonds": 4
+      },
+      "penelopi charmosa": {
+        "name": "Penelopi Charmosa",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "vt__silvaa051": {
+        "name": "vt__silvaa051",
+        "avatar": "",
+        "diamonds": 26
+      },
+      "marcos": {
+        "name": "Marcos",
+        "avatar": "",
+        "diamonds": 20
+      },
+      "leandro oliver✈️": {
+        "name": "Leandro Oliver✈️",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "edu albuquerque": {
+        "name": "Edu Albuquerque",
+        "avatar": "",
+        "diamonds": 5
+      },
+      "🤷": {
+        "name": "🤷",
+        "avatar": "",
+        "diamonds": 220
+      },
+      "paulo": {
+        "name": "Paulo",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "😎tainan😎": {
+        "name": "😎TAINAN😎",
+        "avatar": "",
+        "diamonds": 379
+      },
+      "geanprado": {
+        "name": "geanprado",
+        "avatar": "",
+        "diamonds": 2654
+      },
+      "igor": {
+        "name": "Igor",
+        "avatar": "",
+        "diamonds": 6
+      },
+      "beatriz": {
+        "name": "Beatriz",
+        "avatar": "",
+        "diamonds": 7
+      },
+      "🧉nandoo『❤️‍🔥』": {
+        "name": "🧉Nandoo『❤️‍🔥』",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "fernando_mattos": {
+        "name": "Fernando_mattos",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "🇧🇼 maicon 🇪🇪": {
+        "name": "🇧🇼 Maicon 🇪🇪",
+        "avatar": "",
+        "diamonds": 1360
+      },
+      "erik gk": {
+        "name": "Erik gk",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "ronaldpereiradavalos": {
+        "name": "ronaldpereiradavalos",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "ferreirinha": {
+        "name": "Ferreirinha",
+        "avatar": "",
+        "diamonds": 113
+      },
+      "voando_alto": {
+        "name": "voando_alto",
+        "avatar": "",
+        "diamonds": 3301
+      },
+      "luis .c.r": {
+        "name": "Luis .C.R",
+        "avatar": "",
+        "diamonds": 330
+      },
+      "⚡️jozue🇧🇷⚡️tavares 🇧🇷⚡️": {
+        "name": "⚡️Jozue🇧🇷⚡️Tavares 🇧🇷⚡️",
+        "avatar": "",
+        "diamonds": 1
+      }
+    },
+    "INT": {
+      "eltonreis_@98": {
+        "name": "eltonreis_@98",
+        "avatar": "",
+        "diamonds": 7
+      },
+      "renan": {
+        "name": "Renan",
+        "avatar": "",
+        "diamonds": 16
+      },
+      "iai_soares_": {
+        "name": "iai_soares_",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "ferreira": {
+        "name": "ferreira",
+        "avatar": "",
+        "diamonds": 14
+      },
+      "alisson soares": {
+        "name": "Alisson Soares",
+        "avatar": "",
+        "diamonds": 40
+      },
+      "viniciowollschic3": {
+        "name": "viniciowollschic3",
+        "avatar": "",
+        "diamonds": 3
+      },
+      "user1928731891": {
+        "name": "User1928731891",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "gb": {
+        "name": "gb",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "pai ricardo": {
+        "name": "Pai Ricardo",
+        "avatar": "",
+        "diamonds": 28
+      },
+      "reinaldo camargo": {
+        "name": "Reinaldo Camargo",
+        "avatar": "",
+        "diamonds": 1
+      }
+    },
+    "SAN": {
+      "😝_puts_e a_rezeka_😝": {
+        "name": "😝_puts_e a_rezeka_😝",
+        "avatar": "",
+        "diamonds": 20
+      },
+      "vinicios3008": {
+        "name": "vinicios3008",
+        "avatar": "",
+        "diamonds": 2
+      }
+    },
+    "CEA": {
+      "famas✪": {
+        "name": "FAMAS✪",
+        "avatar": "",
+        "diamonds": 3
+      },
+      "thiago viana": {
+        "name": "thiago viana",
+        "avatar": "",
+        "diamonds": 5
+      },
+      "romulo ferreira": {
+        "name": "Romulo Ferreira",
+        "avatar": "",
+        "diamonds": 8
+      }
+    },
+    "SPT": {
+      "carlosrogeriomuniz": {
+        "name": "carlosrogeriomuniz",
+        "avatar": "",
+        "diamonds": 30
+      },
+      "heitor é 🔝": {
+        "name": "HEITOR É 🔝",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "vt.ⓜ️idia": {
+        "name": "VT.Ⓜ️IDIA",
+        "avatar": "",
+        "diamonds": 10
+      }
+    },
+    "CRU": {
+      "léo nunes": {
+        "name": "Léo Nunes",
+        "avatar": "",
+        "diamonds": 54
+      },
+      "💯mania_xit💯": {
+        "name": "💯MANIA_XIT💯",
+        "avatar": "",
+        "diamonds": 5
+      },
+      "leandro oliver✈️": {
+        "name": "Leandro Oliver✈️",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "kol jr": {
+        "name": "kol Jr",
+        "avatar": "",
+        "diamonds": 42
+      },
+      "valtuil aparecido": {
+        "name": "valtuil aparecido",
+        "avatar": "",
+        "diamonds": 4
+      },
+      "dᥙdᥲ'🪽": {
+        "name": "Dᥙdᥲ'🪽",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "👻ᴇᴜ ɴ ɢᴀsᴛᴏ_ᴇᴜ ɪɴᴠɪsᴛᴏ 💜🫰🏽": {
+        "name": "👻ᴇᴜ ɴ ɢᴀsᴛᴏ_ᴇᴜ ɪɴᴠɪsᴛᴏ 💜🫰🏽",
+        "avatar": "",
+        "diamonds": 60
+      },
+      "🫡lobo ♏otivação 🦊🐆": {
+        "name": "🫡Lobo ♏otivação 🦊🐆",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "antônio otavio": {
+        "name": "Antônio Otavio",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "ash ketchum🇧🇷": {
+        "name": "Ash Ketchum🇧🇷",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "rander ferreira": {
+        "name": "Rander Ferreira",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "ney soares": {
+        "name": "Ney Soares",
+        "avatar": "",
+        "diamonds": 1500
+      },
+      "crisllorane tavares": {
+        "name": "Crisllorane Tavares",
+        "avatar": "",
+        "diamonds": 33
+      },
+      "sabrina": {
+        "name": "Sabrina",
+        "avatar": "",
+        "diamonds": 1
+      }
+    },
+    "REM": {
+      "leandro oliver✈️": {
+        "name": "Leandro Oliver✈️",
+        "avatar": "",
+        "diamonds": 424
+      },
+      "borgexs⚡️": {
+        "name": "Borgexs⚡️",
+        "avatar": "",
+        "diamonds": 4
+      },
+      "wellinton ferreira": {
+        "name": "Wellinton Ferreira",
+        "avatar": "",
+        "diamonds": 89
+      },
+      "eryckzx": {
+        "name": "eryckZx",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "paulo amaral": {
+        "name": "Paulo Amaral",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "micheli silva": {
+        "name": "Micheli Silva",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "տꮖꭱꮖⴎտ": {
+        "name": "ՏᏆᎡᏆႮՏ",
+        "avatar": "",
+        "diamonds": 177
+      },
+      "josé beck gms": {
+        "name": "José Beck GMS",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "🙏ruan gregolly✈️": {
+        "name": "🙏Ruan gregolly✈️",
+        "avatar": "",
+        "diamonds": 61
+      },
+      "𝙹𝚘𝚜𝚞𝚎 🅰️亗": {
+        "name": "𝙹𝚘𝚜𝚞𝚎 🅰️亗",
+        "avatar": "",
+        "diamonds": 40
+      }
+    },
+    "BAH": {
+      "dg": {
+        "name": "DG",
+        "avatar": "",
+        "diamonds": 17
+      },
+      "fabio santiago": {
+        "name": "Fabio Santiago",
+        "avatar": "",
+        "diamonds": 794
+      },
+      "kray": {
+        "name": "Kray",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "petrus💯🤠": {
+        "name": "petrus💯🤠",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "sun.vks": {
+        "name": "sun.vks",
+        "avatar": "",
+        "diamonds": 1
+      }
+    },
+    "FLU": {
+      "thamyris teixeira ✨": {
+        "name": "Thamyris Teixeira ✨",
+        "avatar": "",
+        "diamonds": 300
+      },
+      "marcelo gomes": {
+        "name": "Marcelo Gomes",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "jucimar ana carvalho": {
+        "name": "Jucimar Ana Carvalho",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "du! 🍑": {
+        "name": "du! 🍑",
+        "avatar": "",
+        "diamonds": 6
+      }
+    },
+    "BOT": {
+      "wagner007": {
+        "name": "wagner007",
+        "avatar": "",
+        "diamonds": 10
+      },
+      "editor lendário": {
+        "name": "EDITOR LENDÁRIO",
+        "avatar": "",
+        "diamonds": 5
+      },
+      "gustavo santos": {
+        "name": "Gustavo santos",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "chaos 🃏": {
+        "name": "CHAOS 🃏",
+        "avatar": "",
+        "diamonds": 60
+      },
+      "mary": {
+        "name": "Mary",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "caitano": {
+        "name": "caitano",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "@wg.7": {
+        "name": "@WG.7",
+        "avatar": "",
+        "diamonds": 229
+      }
+    },
+    "SPFC": {
+      "richard ": {
+        "name": "RICHARD ",
+        "avatar": "",
+        "diamonds": 3
+      },
+      "almir carvalho": {
+        "name": "Almir Carvalho",
+        "avatar": "",
+        "diamonds": 127
+      },
+      "lu": {
+        "name": "lu",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "kauan pereira": {
+        "name": "Kauan Pereira",
+        "avatar": "",
+        "diamonds": 721
+      },
+      "souza": {
+        "name": "souza",
+        "avatar": "",
+        "diamonds": 14
+      },
+      "@lucas gimenez": {
+        "name": "@lucas gimenez",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "haroldo leres": {
+        "name": "Haroldo Leres",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "gabriel ferreira": {
+        "name": "Gabriel Ferreira",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "pedro henrique": {
+        "name": "Pedro Henrique",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "junior taveira": {
+        "name": "Junior Taveira",
+        "avatar": "",
+        "diamonds": 12
+      },
+      "chaos 🃏": {
+        "name": "CHAOS 🃏",
+        "avatar": "",
+        "diamonds": 700
+      },
+      "night.previas 🍀": {
+        "name": "Night.Previas 🍀",
+        "avatar": "",
+        "diamonds": 6
+      },
+      "`ꮐᥲᖯᥡ💜": {
+        "name": "`Ꮐᥲᖯᥡ💜",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "julio almeida": {
+        "name": "Julio Almeida",
+        "avatar": "",
+        "diamonds": 1400
+      },
+      "vestx": {
+        "name": "Vestx",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "ee17": {
+        "name": "EE17",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "hudson souza": {
+        "name": "Hudson Souza",
+        "avatar": "",
+        "diamonds": 42
+      },
+      "⁉️karamba yas⁉️": {
+        "name": "⁉️Karamba Yas⁉️",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "ds 🔝": {
+        "name": "DS 🔝",
+        "avatar": "",
+        "diamonds": 50
+      },
+      "luancosta7136": {
+        "name": "luancosta7136",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "gabizinha_69": {
+        "name": "gabizinha_69",
+        "avatar": "",
+        "diamonds": 3
+      }
+    },
+    "VAS": {
+      "joao carlos": {
+        "name": "joao Carlos",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "hugozn 23🇧🇪": {
+        "name": "HUGOZN 23🇧🇪",
+        "avatar": "",
+        "diamonds": 4
+      },
+      "larissa limy sants": {
+        "name": "larissa limy sants",
+        "avatar": "",
+        "diamonds": 3
+      },
+      "user365468457445": {
+        "name": "user365468457445",
+        "avatar": "",
+        "diamonds": 2
+      },
+      "rd 244 piloto 🥷🏍💨": {
+        "name": "RD 244 piloto 🥷🏍💨",
+        "avatar": "",
+        "diamonds": 4
+      },
+      "eder senna": {
+        "name": "eder senna",
+        "avatar": "",
+        "diamonds": 1
+      }
+    },
+    "VIT": {
+      "milena": {
+        "name": "Milena",
+        "avatar": "",
+        "diamonds": 8
+      },
+      "rodrigo lima": {
+        "name": "Rodrigo Lima",
+        "avatar": "",
+        "diamonds": 7
+      },
+      "herbert lucas": {
+        "name": "Herbert Lucas",
+        "avatar": "",
+        "diamonds": 6367
+      },
+      "wagner ferreira": {
+        "name": "Wagner Ferreira",
+        "avatar": "",
+        "diamonds": 3
+      },
+      "charles noronzalvrde": {
+        "name": "Charles Noronzalvrde",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "_monteiro_": {
+        "name": "_monteiro_",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "joao_santxx07": {
+        "name": "joao_santxx07",
+        "avatar": "",
+        "diamonds": 1
+      },
+      "marcos penelu": {
+        "name": "Marcos Penelu",
+        "avatar": "",
+        "diamonds": 30
+      },
+      "não é o guel🕺": {
+        "name": "não é o guel🕺",
+        "avatar": "",
+        "diamonds": 4
+      },
+      "eri quê?": {
+        "name": "eri quê?",
+        "avatar": "",
+        "diamonds": 21
+      },
+      "romilson santos": {
+        "name": "Romilson Santos",
+        "avatar": "",
+        "diamonds": 3
+      },
+      "lᥱtιᥴιᥲ ᥉ᥲᥒt᥆᥉ 🧜🏻‍♀️": {
+        "name": "Lᥱtιᥴιᥲ ᥉ᥲᥒt᥆᥉ 🧜🏻‍♀️",
+        "avatar": "",
+        "diamonds": 1
+      }
+    },
+    "FOR": {
+      "selva": {
+        "name": "selva",
+        "avatar": "",
+        "diamonds": 2
+      }
+    }
+  },
+  "updated_at": 1784676956.1823382
+}

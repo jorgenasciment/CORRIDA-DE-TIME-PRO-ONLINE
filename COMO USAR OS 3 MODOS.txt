@@ -1,0 +1,26 @@
+CORRIDA DE TIME PRO — 3 MODOS
+================================
+
+MODO 1 — LIVE PELO PC
+1. Abra INICIAR.bat.
+2. No painel, clique em “MODO 1 — Jogo no PC”.
+3. Capture a tela do jogo no OBS.
+
+MODO 2 — PAINEL NO PC E JOGO NO CELULAR
+1. Abra INICIAR.bat.
+2. PC e celular devem estar no mesmo roteador.
+3. Leia o QR Code “CELULAR NA MESMA REDE”.
+4. O painel continua no PC e o jogo abre no celular.
+
+MODO 3 — UM CELULAR NO PAINEL E OUTRO NO JOGO
+1. No PC, abra INICIAR MODO ONLINE.bat.
+2. Não feche a janela preta durante a live.
+3. No celular de controle, leia o QR Code “PAINEL ONLINE”.
+4. No celular da live, leia o QR Code “JOGO ONLINE”.
+5. Os celulares podem estar em redes diferentes ou usando 4G/5G.
+
+IMPORTANTE
+- No modo online, o PC precisa permanecer ligado e conectado à internet.
+- Na primeira utilização online, o sistema baixa automaticamente o componente cloudflared.exe.
+- O endereço online muda sempre que o modo online é reiniciado.
+- Não compartilhe o link do painel com outras pessoas, pois ele permite controlar o jogo.

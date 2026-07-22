@@ -1,0 +1,12 @@
+COMO USAR
+
+1. No PC, execute INICIAR.bat.
+2. Deixe o painel aberto no PC.
+3. Veja no painel a caixa verde "Jogo no celular".
+4. No celular, conectado ao mesmo Wi-Fi/rede do PC, digite o endereço mostrado.
+5. Coloque o celular na vertical e abra a live usando compartilhamento de tela/captura do navegador.
+
+IMPORTANTE
+- O PC pode estar no cabo e o celular no Wi-Fi, desde que os dois usem o mesmo roteador.
+- Se o Windows pedir permissão de Firewall para o Python, marque Rede Privada e clique em Permitir acesso.
+- O painel continua somente no PC; o celular mostra apenas o jogo.

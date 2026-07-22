@@ -1,0 +1,18 @@
+SINCRONIZAÇÃO CENTRAL ATIVADA
+
+Agora os pontos, números de vitórias e artilheiros ficam salvos no PC que executa o servidor.
+Todos os aparelhos que abrirem o jogo por esse mesmo servidor verão os mesmos resultados.
+
+IMPORTANTE NA PRIMEIRA ABERTURA:
+1. Abra primeiro no aparelho/navegador que possui os resultados corretos e antigos.
+2. Aguarde alguns segundos com o servidor ligado.
+3. Depois abra nos outros aparelhos.
+
+O primeiro aparelho migrará os resultados antigos do navegador para o salvamento central.
+Depois disso, PC e celulares usarão sempre os mesmos dados.
+
+O arquivo central fica em:
+server/game_state.json
+
+Não apague esse arquivo se quiser preservar vitórias e artilheiros.
+Faça uma cópia dele como backup quando desejar.

@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: corrida-de-time-pro-online
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server/main.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9

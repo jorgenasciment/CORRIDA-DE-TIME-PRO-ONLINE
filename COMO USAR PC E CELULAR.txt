@@ -1,0 +1,18 @@
+COMO USAR O MESMO JOGO NO PC OU NO CELULAR
+
+1. Abra o INICIAR.bat no PC.
+2. O painel continua no PC para controlar a live.
+
+LIVE PELO PC:
+- Clique em “Abrir jogo no PC”.
+- No OBS, capture a janela ou use a URL mostrada no painel.
+
+LIVE PELO CELULAR:
+- Aponte a câmera do celular para o QR Code.
+- Abra o link e toque em “TELA CHEIA”.
+- O jogo recebe em tempo real tudo que o painel do PC enviar.
+
+IMPORTANTE:
+- PC e celular precisam estar no mesmo roteador.
+- O PC pode estar no cabo e o celular no Wi-Fi.
+- Quando o Windows pedir permissão de Firewall, permita em Rede Privada.

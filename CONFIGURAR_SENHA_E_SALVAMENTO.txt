@@ -1,0 +1,14 @@
+CORRIDA DE TIME PRO - CONFIGURACAO NO RENDER
+
+Environment Variables:
+AUTH_USER = admin
+AUTH_PASSWORD = escolha uma senha exclusiva
+AUTH_SECRET = uma frase grande e aleatoria
+GITHUB_REPO = jorgenasciment/CORRIDA-DE-TIME-PRO-ONLINE
+GITHUB_BRANCH = main
+GITHUB_STATE_PATH = cloud/game_state.json
+GITHUB_TOKEN = token Fine-grained com Contents: Read and write apenas nesse repositorio
+
+O historico atualizado do arquivo enviado ja esta em server/game_state.json.
+Depois de configurar o token, cada alteracao sera salva automaticamente no GitHub e carregada em qualquer aparelho.
+Para sair: /logout

@@ -1,0 +1,16 @@
+CORRIDA DE TIME PRO - VERSAO ONLINE SEM PC
+
+Esta pasta foi preparada para hospedar o servidor na internet.
+Depois de publicar, use:
+
+PAINEL: https://SEU-LINK/painel
+JOGO:   https://SEU-LINK/overlay?modo=celular
+
+No iPhone, abra o link JOGO.
+No Android, abra o link PAINEL.
+
+IMPORTANTE:
+- O servidor passa a rodar na hospedagem, não no seu computador.
+- Não use o arquivo INICIAR MODO ONLINE.bat nessa versão hospedada.
+- O plano gratuito da hospedagem pode dormir depois de ficar sem uso e pode apagar arquivos locais em uma nova implantação.
+- Para guardar campeões e artilheiros de forma permanente, a próxima etapa é ligar um banco gratuito em nuvem.
